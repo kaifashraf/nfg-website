@@ -1074,10 +1074,10 @@ img.shiny-enhanced {
     
     /* Typography & Spacing */
     .hero-container-custom {
-        padding-top: 20px; /* Greatly reduced gap between header and content */
+        padding-top: 130px; /* Restored gap to match screenshot */
     }
     .hero-subtitle-custom {
-        margin-bottom: 20px; /* Reduced gap between subtitle and title */
+        margin-bottom: 40px; /* Restored gap to match screenshot */
     }
     .hero-title-custom {
         font-size: 3rem;
