@@ -980,13 +980,15 @@ img.shiny-enhanced {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    background: transparent;
-    border: none;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
     cursor: pointer;
     z-index: 2000;
-    padding: 0;
+    padding: 8px 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .mobile-menu-toggle span {
     display: block;
