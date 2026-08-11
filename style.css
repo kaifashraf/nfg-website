@@ -1073,6 +1073,12 @@ img.shiny-enhanced {
     }
     
     /* Typography & Spacing */
+    .hero-container-custom {
+        padding-top: 80px; /* Reduced gap between header and content */
+    }
+    .hero-subtitle-custom {
+        margin-bottom: 20px; /* Reduced gap between subtitle and title */
+    }
     .hero-title-custom {
         font-size: 3rem;
         line-height: 1.1;
