@@ -35,16 +35,18 @@ if (typeof gsap !== 'undefined') {
 
     // Gallery Items
     gsap.utils.toArray('.gallery-item').forEach((item, i) => {
+        let xOffset = i % 2 === 0 ? -100 : 100;
         gsap.from(item, {
             scrollTrigger: {
                 trigger: item,
-                start: "top 85%",
+                start: "top 90%",
+                toggleActions: "play none none reverse"
             },
+            x: xOffset,
             y: 50,
             opacity: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            delay: (i % 2) * 0.2
+            duration: 1,
+            ease: "power3.out"
         });
     });
 
