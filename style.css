@@ -31,6 +31,7 @@
 html {
   scroll-behavior: smooth;
   cursor: none;
+  overflow-x: hidden;
 }
 
 body {
@@ -40,6 +41,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   cursor: none;
+  overflow-x: hidden;
 }
 
 /* Custom Cursor */
