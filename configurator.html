@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurator | NFG Helmets</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .configurator-layout {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            min-height: calc(100vh - 80px);
+            margin-top: 80px;
+        }
+
+        .config-preview {
+            background-color: var(--color-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* The Helmet layers for dynamic coloring */
+        .helmet-layers {
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+        
+        .helmet-part {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: background-color 0.4s ease;
+        }
+        
+        .helmet-shell {
+            background-color: #556B2F; /* Default olive */
+            box-shadow: inset -20px -20px 40px rgba(0,0,0,0.5), inset 20px 20px 40px rgba(255,255,255,0.2);
+        }
+        
+        .helmet-visor {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            width: 90%;
+            height: 40%;
+            background-color: rgba(0,0,0,0.8);
+            border-radius: 20px 20px 40px 40px;
+            box-shadow: inset 0px 5px 10px rgba(255,255,255,0.3);
+            transition: background-color 0.4s ease;
+        }
+        
+        .helmet-trim {
+            position: absolute;
+            bottom: -5%;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            border: 15px solid #8b7355; /* Default leather trim */
+            border-top: none;
+            border-radius: 0 0 200px 200px;
+            box-sizing: border-box;
+            transition: border-color 0.4s ease;
+        }
+
+        .config-panel {
+            background-color: #fff;
+            padding: var(--spacing-lg);
+            border-left: 1px solid var(--color-border);
+            overflow-y: auto;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+        }
+
+        .config-section {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .config-section h3 {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-light);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .color-option {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .color-option.active {
+            border-color: var(--color-dark);
+            transform: scale(1.1);
+        }
+
+        .price-summary {
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--color-border);
+        }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .price-total {
+            font-size: var(--text-xl);
+            font-family: var(--font-serif);
+            margin-top: var(--spacing-sm);
+        }
+
+        @media (max-width: 900px) {
+            .configurator-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .config-preview {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-content-custom">
+            <div class="nav-brand-custom">
+                <span class="nfg-logo">NFG</span>
+                <span class="nfg-sub">NEW FIBREGLASS</span>
+            </div>
+            <div class="nav-links-custom">
+                <a href="index.html">HOME</a>
+                <a href="index.html#collection">COLLECTION</a>
+                <a href="index.html#about">ABOUT US</a>
+                <a href="index.html#gallery">GALLERY</a>
+                <a href="index.html#footer">CONTACT</a>
+            </div>
+            <div class="nav-right-custom">
+                <a href="configurator.html" class="btn-commission">ENQUIRY</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="configurator-layout">
+        <!-- Preview -->
+        <div class="config-preview">
+            <div class="helmet-layers">
+                <div class="helmet-part helmet-shell" id="preview-shell"></div>
+                <div class="helmet-trim" id="preview-trim"></div>
+                <div class="helmet-visor" id="preview-visor"></div>
+            </div>
+        </div>
+
+        <!-- Panel -->
+        <div class="config-panel">
+            <h1 class="text-3xl mb-sm">Bespoke Configurator</h1>
+            <p class="text-sm color-text-light mb-lg">Build your custom NFG helmet.</p>
+
+            <div class="config-section">
+                <h3>Shell Color</h3>
+                <div class="options-grid" id="shell-colors">
+                    <button class="color-option active" style="background-color: #556B2F;" data-color="#556B2F" data-name="Olive Drab" data-price="0" onclick="updateShell(this)"></button>
+                    <button class="color-option" style="background-color: #111111;" data-color="#111111" data-name="Matte Black" data-price="0" onclick="updateShell(this)"></button>
+                    <button class="color-option" style="background-color: #F5F5DC;" data-color="#F5F5DC" data-name="Cream" data-price="0" onclick="updateShell(this)"></button>
+                    <button class="color-option" style="background-color: #004225;" data-color="#004225" data-name="British Racing Green" data-price="50" onclick="updateShell(this)"></button>
+                </div>
+                <p class="text-sm mt-xs" id="shell-name">Olive Drab</p>
+            </div>
+
+            <div class="config-section">
+                <h3>Leather Trim</h3>
+                <div class="options-grid" id="trim-colors">
+                    <button class="color-option active" style="background-color: #8b7355;" data-color="#8b7355" data-name="Tan Leather" data-price="0" onclick="updateTrim(this)"></button>
+                    <button class="color-option" style="background-color: #2b1f13;" data-color="#2b1f13" data-name="Dark Roast" data-price="0" onclick="updateTrim(this)"></button>
+                    <button class="color-option" style="background-color: #111111;" data-color="#111111" data-name="Black Leather" data-price="0" onclick="updateTrim(this)"></button>
+                </div>
+                <p class="text-sm mt-xs" id="trim-name">Tan Leather</p>
+            </div>
+            
+            <div class="config-section">
+                <h3>Visor Tint</h3>
+                <div class="options-grid" id="visor-tints">
+                    <button class="color-option" style="background-color: rgba(255,255,255,0.4);" data-color="rgba(255,255,255,0.4)" data-name="Clear" data-price="0" onclick="updateVisor(this)"></button>
+                    <button class="color-option active" style="background-color: rgba(0,0,0,0.8);" data-color="rgba(0,0,0,0.8)" data-name="Dark Smoke" data-price="25" onclick="updateVisor(this)"></button>
+                    <button class="color-option" style="background-color: rgba(200,160,50,0.8);" data-color="rgba(200,160,50,0.8)" data-name="Amber" data-price="35" onclick="updateVisor(this)"></button>
+                </div>
+                <p class="text-sm mt-xs" id="visor-name">Dark Smoke</p>
+            </div>
+
+            <div class="price-summary">
+                <div class="price-row">
+                    <span class="text-sm color-text-light">Base Price</span>
+                    <span class="text-sm">€ 650.00</span>
+                </div>
+                <div class="price-row" id="add-ons-row">
+                    <span class="text-sm color-text-light">Additions</span>
+                    <span class="text-sm" id="addons-price">€ 25.00</span>
+                </div>
+                <div class="price-row price-total">
+                    <span>Total</span>
+                    <span id="total-price">€ 675.00</span>
+                </div>
+                
+                <button class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md);">Submit Enquiry</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="cursor.js"></script>
+    <script src="configurator.js"></script>
+</body>
+</html>

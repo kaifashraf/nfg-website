@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFG - National Fibre Glass | Tactical & Safety Helmets</title>
+    <meta name="description" content="Since 1975. Hand-laid fibreglass for a considered ride. Made in Germany. Custom motorcycle helmet commissions.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--color-bg);
+            padding-top: var(--spacing-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: var(--text-5xl);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: var(--text-xl);
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-lg);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-image-placeholder {
+            width: 100%;
+            height: 600px;
+            background-color: #e0ddd5;
+            margin-top: var(--spacing-lg);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4/5;
+            background-color: #e8e6e1;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--spacing-md);
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+            color: var(--color-dark-text);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-info {
+            opacity: 1;
+        }
+        
+        .gallery-item-info h3 {
+            font-size: var(--text-xl);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* Process */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .process-num {
+            font-family: var(--font-serif);
+            font-size: var(--text-3xl);
+            color: var(--color-accent);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--color-dark);
+            color: var(--color-dark-text);
+            text-align: center;
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            display: none;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .testimonial.active {
+            display: flex;
+        }
+
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            font-style: italic;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: var(--text-3xl); }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content-custom">
+            <div class="nav-brand-custom">
+                <span class="nfg-logo">NFG</span>
+                <span class="nfg-sub">NEW FIBREGLASS</span>
+            </div>
+            <div class="nav-links-custom">
+                <a href="index.html">HOME</a>
+                <a href="#collection">COLLECTION</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="#gallery">GALLERY</a>
+                <a href="#footer">CONTACT</a>
+            </div>
+            <div class="nav-right-custom">
+                <a href="configurator.html" class="btn-commission">ENQUIRY</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-custom">
+        <!-- Background Image -->
+        <div class="hero-bg-custom">
+            <img src="hero_helmet.png" alt="Matte Grey Helmet">
+            <div class="hero-gradient-overlay"></div>
+        </div>
+        
+        <div class="container hero-container-custom">
+            <div class="hero-content-custom">
+                <div class="hero-subtitle-custom">
+                    <span class="line-custom"></span>
+                    <span class="text-custom">SINCE 1975</span>
+                </div>
+                
+                <h1 class="hero-title-custom">
+                    Hand-laid<br>
+                    <span class="italic-serif">fibreglass</span><br>
+                    for a considered ride.
+                </h1>
+                
+                <div class="hero-bottom-custom">
+                    <p class="hero-desc-custom">
+                        At National Fibre Glass (NFG), we elevate tactical protection to an art form. Meticulously forged from premium composite fibers, our elite anti-riot and safety helmets blend uncompromising impact resistance with refined, lightweight ergonomics. Designed for the modern defender, we deliver absolute security and sophisticated craftsmanship to the most demanding environments.
+                    </p>
+                    
+                    <div class="hero-actions-custom">
+                        <a href="#collection" class="btn-solid-custom">VIEW THE COLLECTION</a>
+                        <div class="btn-group-custom">
+                            <span class="btn-label-custom">MADE IN INDIA</span>
+                            <a href="#craft" class="btn-outline-custom">THE CRAFT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commissions Gallery -->
+    <section id="commissions" class="section">
+        <div class="container">
+            <div class="flex justify-between items-center mb-lg" style="margin-bottom: var(--spacing-lg);">
+                <h2 class="text-3xl">Our Products</h2>
+                <a href="journal.html" class="text-sm" style="text-transform: uppercase; border-bottom: 1px solid var(--color-text);">View all</a>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" style="position: relative;">
+                    <div class="gallery-image-wrapper carousel-wrapper">
+                        <div class="carousel-track">
+                            <img src="green-helmet-front.png" alt="Front View" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="green-helmet-right.png" alt="Right View" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="green-helmet-left.png" alt="Left View" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <!-- Explicit Button for Modal -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 15; pointer-events: none;">
+                            <button onclick="openProductModal('helmet1')" style="pointer-events: auto; padding: 16px 32px; background: var(--color-accent, #c9a050); color: #fff; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.2s;">View Details & Price</button>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <div class="gallery-item-text">
+                            <p class="text-xs color-text-light">TACTICAL SERIES</p>
+                            <h3>Police Riot Helmet</h3>
+                            <p>Swipe to view multiple angles.</p>
+                        </div>
+                        <button class="btn-circle"></button>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" style="position: relative;">
+                    <div class="gallery-image-wrapper carousel-wrapper">
+                        <div class="carousel-track">
+                            <img src="anti-riot-right.png" alt="Anti-Riot Right View" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="anti-riot-left.png" alt="Anti-Riot Left View" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <!-- Explicit Button for Modal -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 15; pointer-events: none;">
+                            <button onclick="openProductModal('helmet2')" style="pointer-events: auto; padding: 16px 32px; background: var(--color-accent, #c9a050); color: #fff; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.2s;">View Details & Price</button>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <div class="gallery-item-text">
+                            <p class="text-xs color-text-light">DEFENDER SERIES</p>
+                            <h3>Anti-Riot Shield Helmet</h3>
+                            <p>Premium glossy finish.</p>
+                        </div>
+                        <button class="btn-circle"></button>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <div class="gallery-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1581453905786-886d34b8c5a4?q=80&w=800&auto=format&fit=crop" alt="Goodwood Revival 2024" onerror="this.style.display='none'">
+                    </div>
+                    <div class="gallery-item-info">
+                        <div class="gallery-item-text">
+                            <p class="text-xs color-text-light">FULL FACE</p>
+                            <h3>Rally '74</h3>
+                            <p>Classic motorsport design.</p>
+                        </div>
+                        <button class="btn-circle"></button>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <div class="gallery-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1620023616239-51be659fb26f?q=80&w=800&auto=format&fit=crop" alt="Isle of Man TT Tribute" onerror="this.style.display='none'">
+                    </div>
+                    <div class="gallery-item-info">
+                        <div class="gallery-item-text">
+                            <p class="text-xs color-text-light">FULL FACE</p>
+                            <h3>GP Reserve</h3>
+                            <p>Track-focused aerodynamics.</p>
+                        </div>
+                        <button class="btn-circle">↗</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section" style="background-color: #f1efea;">
+        <div class="container">
+            <h2 class="text-3xl mb-lg" style="margin-bottom: var(--spacing-md); text-align: center;">The Process</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto var(--spacing-lg);">A four-step journey to create a helmet that is uniquely yours, handcrafted in our Bad Ems workshop.</p>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <span class="process-num">01</span>
+                    <h3 class="text-xl">Conversation</h3>
+                    <p class="text-sm color-text-light">We discuss your riding style, motorcycle aesthetic, and initial concepts to form a brief.</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-num">02</span>
+                    <h3 class="text-xl">Fitting</h3>
+                    <p class="text-sm color-text-light">Precise measurements are taken to ensure the hand-laid EPS liner offers unparalleled comfort and safety.</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-num">03</span>
+                    <h3 class="text-xl">Paint</h3>
+                    <p class="text-sm color-text-light">The shell is prepared, primed, and hand-painted according to your bespoke design.</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-num">04</span>
+                    <h3 class="text-xl">Assembly</h3>
+                    <p class="text-sm color-text-light">Final finishing, trim installation, and quality checks before personal delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="testimonial-slider" id="testimonial-slider">
+                <div class="testimonial active">
+                    <p class="testimonial-quote">"The craftsmanship is evident in every detail. It feels less like safety equipment and more like a piece of art."</p>
+                    <p class="text-sm text-uppercase" style="color: var(--color-accent);">— Marcus T., Berlin</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-quote">"From the initial sketch to the final fitting, the team at NFG understood exactly what I wanted for my Cafe Racer build."</p>
+                    <p class="text-sm text-uppercase" style="color: var(--color-accent);">— Sarah L., London</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-quote">"Uncompromising quality. The fit is perfect, and the paint finish is flawless."</p>
+                    <p class="text-sm text-uppercase" style="color: var(--color-accent);">— Johannes K., Munich</p>
+                </div>
+            </div>
+            
+            <div class="flex justify-center gap-sm mt-md" style="margin-top: var(--spacing-md);">
+                <button class="btn btn-outline" style="padding: 8px 16px; border-color: var(--color-dark-text); color: var(--color-dark-text);" onclick="prevTestimonial()">Prev</button>
+                <button class="btn btn-outline" style="padding: 8px 16px; border-color: var(--color-dark-text); color: var(--color-dark-text);" onclick="nextTestimonial()">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>NFG.</h2>
+                    <p>New Fibreglass</p>
+                    <p style="margin-top: var(--spacing-sm);">Since 1975 · Germany</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <div class="footer-links">
+                        <a href="index.html" class="footer-link">Products</a>
+                        <a href="configurator.html" class="footer-link">Configurator</a>
+                        <a href="journal.html" class="footer-link">Journal</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <div class="footer-links">
+                        <a href="#about" class="footer-link">About Us</a>
+                        <a href="#craft" class="footer-link">The Craft</a>
+                        <a href="#careers" class="footer-link">Careers</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <div class="footer-links">
+                        <a href="#fitting" class="footer-link">Fitting Guide</a>
+                        <a href="#care" class="footer-link">Care & Maintenance</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <div class="footer-links">
+                        <a href="#terms" class="footer-link">Terms & Conditions</a>
+                        <a href="#privacy" class="footer-link">Privacy Policy</a>
+                        <a href="#imprint" class="footer-link">Imprint</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 NFG Helmets. All rights reserved.</p>
+                <div class="flex gap-sm">
+                    <a href="#" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link">Pinterest</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Trust Seal -->
+    <a href="https://trustseal.indiamart.com/members/nfg-new-fibre-glass-private-limited" target="_blank" rel="noopener noreferrer" class="trust-seal-fixed">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trust-seal-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+        <div class="trust-seal-content">
+            <span class="trust-seal-title">Verified Supplier</span>
+            <span class="trust-seal-brand">IndiaMART</span>
+        </div>
+    </a>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProductModal()">×</button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img id="modalImage" src="anti-riot-right.png" alt="Product Image">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle" class="text-3xl" style="font-family: var(--font-serif); margin-bottom: var(--spacing-xs);">Anti Riot Helmet</h2>
+                    <p id="modalPrice" class="modal-price" style="font-size: var(--text-xl); color: var(--color-accent); margin-bottom: var(--spacing-md);">Approx. Price: <strong>Rs 400</strong> / Piece</p>
+                    
+                    <div class="product-specs" style="margin-bottom: var(--spacing-lg);">
+                        <h4 style="margin-bottom: var(--spacing-sm); text-transform: uppercase; letter-spacing: 0.05em; font-size: var(--text-sm); border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 8px;">Product Details</h4>
+                        <table id="modalSpecsTable" class="specs-table" style="width: 100%; border-collapse: collapse; font-size: var(--text-base);">
+                            <!-- Dynamic Specs -->
+                        </table>
+                    </div>
+                    
+                    <div id="contactSection">
+                        <button class="btn" style="width: 100%; background: var(--color-dark); color: var(--color-bg);" onclick="showContactForm()">Get Latest Price</button>
+                    </div>
+                    
+                    <div id="contactFormSection" style="display: none; flex-direction: column; background: rgba(0,0,0,0.02); padding: var(--spacing-lg); border-radius: 8px; border: 1px solid rgba(0,0,0,0.05);">
+                        <h4 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 8px;">Request B2B Pricing</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 20px; line-height: 1.5;">Please provide your contact number. An NFG product specialist will reach out shortly.</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <input type="tel" id="customerPhone" placeholder="+91 98765 43210" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(0,0,0,0.15); font-size: 1rem; border-radius: 4px; background: #fff; font-family: inherit; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--color-accent)'" onblur="this.style.borderColor='rgba(0,0,0,0.15)'">
+                            
+                            <button class="btn" style="width: 100%; background: #25D366; color: white; border: none; padding: 14px; font-weight: bold; letter-spacing: 1px; white-space: nowrap; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);" onclick="submitInterest()">SUBMIT REQUEST</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="cursor.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

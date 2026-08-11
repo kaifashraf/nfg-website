@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | NFG - National Fibre Glass</title>
+    <meta name="description" content="Since 1975. Hand-laid fibreglass for a considered ride. Made in Germany. Custom motorcycle helmet commissions.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--color-bg);
+            padding-top: var(--spacing-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: var(--text-5xl);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: var(--text-xl);
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-lg);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-image-placeholder {
+            width: 100%;
+            height: 600px;
+            background-color: #e0ddd5;
+            margin-top: var(--spacing-lg);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4/5;
+            background-color: #e8e6e1;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--spacing-md);
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+            color: var(--color-dark-text);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-info {
+            opacity: 1;
+        }
+        
+        .gallery-item-info h3 {
+            font-size: var(--text-xl);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* Process */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .process-num {
+            font-family: var(--font-serif);
+            font-size: var(--text-3xl);
+            color: var(--color-accent);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--color-dark);
+            color: var(--color-dark-text);
+            text-align: center;
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            display: none;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .testimonial.active {
+            display: flex;
+        }
+
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            font-style: italic;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: var(--text-3xl); }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content-custom">
+            <div class="nav-brand-custom">
+                <span class="nfg-logo">NFG</span>
+                <span class="nfg-sub">NEW FIBREGLASS</span>
+            </div>
+            <div class="nav-links-custom">
+                <a href="index.html">HOME</a>
+                <a href="index.html#collection">COLLECTION</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="index.html#gallery">GALLERY</a>
+                <a href="#footer">CONTACT</a>
+            </div>
+            <div class="nav-right-custom">
+                <a href="configurator.html" class="btn-commission">ENQUIRY</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-custom">
+        <!-- Background Image -->
+        <div class="hero-bg-custom">
+            <img src="hero_helmet.png" alt="Matte Grey Helmet">
+            <div class="hero-gradient-overlay"></div>
+        </div>
+        
+        <div class="container hero-container-custom">
+            <div class="hero-content-custom">
+                <div class="hero-subtitle-custom">
+                    <span class="line-custom"></span>
+                    <span class="text-custom">OUR STORY</span>
+                </div>
+                
+                <h1 class="hero-title-custom">
+                    Pioneers in<br>
+                    <span class="italic-serif">tactical</span><br>
+                    safety gear.
+                </h1>
+                
+                <div class="hero-bottom-custom">
+                    <p class="hero-desc-custom">
+                        Discover the heritage, precision engineering, and uncompromising standards behind every piece of National Fibre Glass tactical equipment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="section" style="background-color: var(--color-bg); padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+            <h2 class="text-3xl" style="margin-bottom: var(--spacing-lg); font-family: var(--font-serif);">Legacy of Protection</h2>
+            <p style="font-size: var(--text-lg); line-height: 1.8; margin-bottom: var(--spacing-md); color: var(--color-text);">
+                Founded on the principles of absolute security and uncompromising durability, National Fibre Glass (NFG) has been at the forefront of tactical and industrial safety equipment manufacturing in India for decades.
+            </p>
+            <p style="font-size: var(--text-lg); line-height: 1.8; margin-bottom: var(--spacing-md); color: var(--color-text);">
+                Our specialization lies in the advanced engineering of Fiber Reinforced Plastic (FRP) and premium composite materials. This allows us to craft anti-riot shields and safety helmets that are not only extraordinarily resilient against high-impact forces, but also remarkably lightweight for the modern defender.
+            </p>
+            <p style="font-size: var(--text-lg); line-height: 1.8; margin-bottom: var(--spacing-xl); color: var(--color-text);">
+                From our state-of-the-art manufacturing facilities to the frontlines of security operations, every NFG product is a testament to rigorous safety standards, sophisticated craftsmanship, and a relentless commitment to protecting those who protect us.
+            </p>
+
+
+            <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: var(--spacing-xl) 0;">
+
+            <h2 class="text-3xl" style="margin-bottom: var(--spacing-xl); font-family: var(--font-serif); text-align: center;">Corporate Profile</h2>
+            
+            <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--spacing-xl);">
+                
+                <!-- Section 1 -->
+                <div>
+                    <h3 style="font-family: var(--font-serif); font-size: var(--text-xl); color: var(--color-accent); margin-bottom: var(--spacing-md); border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: var(--spacing-sm);">Operations & Leadership</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); row-gap: var(--spacing-md); column-gap: var(--spacing-xl);">
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-light);">Chief Executive</span>
+                            <span style="font-size: 1.1rem; color: var(--color-text);">Sayed Mohammad Samar Raza</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-light);">Primary Operations</span>
+                            <span style="font-size: 1.1rem; color: var(--color-text);">Global Trade & Premium Distribution</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-light);">Capabilities</span>
+                            <span style="font-size: 1.1rem; color: var(--color-text);">Bespoke Manufacturing, Wholesale & Retail</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-light);">Scale & Capacity</span>
+                            <span style="font-size: 1.1rem; color: var(--color-text);">Exclusive Team of 10 Specialists | 1.5 - 5 Cr Annual Revenue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div>
+                    <h3 style="font-family: var(--font-serif); font-size: var(--text-xl); color: var(--color-accent); margin-bottom: var(--spacing-md); border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: var(--spacing-sm);">Statutory Details</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); row-gap: var(--spacing-md); column-gap: var(--spacing-xl);">
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-light);">Global Headquarters</span>
+                            <span style="font-size: 1.1rem; color: var(--color-text); line-height: 1.6;">Roop Nagar Industrial Estate, Kh. No. 1492/2,<br>Banthla, Ghaziabad- 201102,<br>Uttar Pradesh, India</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-light);">Credentials</span>
+                            <span style="font-size: 1.1rem; color: var(--color-text); font-family: monospace;">GST: 09AAHCN8523D1ZE (Since 2022)<br>CIN: U26999DL2021PTC387992</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-light);">Corporate Structure</span>
+                            <span style="font-size: 1.1rem; color: var(--color-text);">Private Limited Company</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-light);">Financial Partner</span>
+                            <span style="font-size: 1.1rem; color: var(--color-text);">ICICI Bank</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-light);">Managing Partners</span>
+                            <span style="font-size: 1.1rem; color: var(--color-text);">Sayed Mohammad Samar Raza<br>Sanaubar Raza</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>NFG.</h2>
+                    <p>New Fibreglass</p>
+                    <p style="margin-top: var(--spacing-sm);">Since 1975 · Germany</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <div class="footer-links">
+                        <a href="index.html" class="footer-link">Products</a>
+                        <a href="configurator.html" class="footer-link">Configurator</a>
+                        <a href="journal.html" class="footer-link">Journal</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <div class="footer-links">
+                        <a href="#about" class="footer-link">About Us</a>
+                        <a href="#craft" class="footer-link">The Craft</a>
+                        <a href="#careers" class="footer-link">Careers</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <div class="footer-links">
+                        <a href="#fitting" class="footer-link">Fitting Guide</a>
+                        <a href="#care" class="footer-link">Care & Maintenance</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <div class="footer-links">
+                        <a href="#terms" class="footer-link">Terms & Conditions</a>
+                        <a href="#privacy" class="footer-link">Privacy Policy</a>
+                        <a href="#imprint" class="footer-link">Imprint</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 NFG Helmets. All rights reserved.</p>
+                <div class="flex gap-sm">
+                    <a href="#" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link">Pinterest</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Trust Seal -->
+    <a href="https://trustseal.indiamart.com/members/nfg-new-fibre-glass-private-limited" target="_blank" rel="noopener noreferrer" class="trust-seal-fixed">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trust-seal-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+        <div class="trust-seal-content">
+            <span class="trust-seal-title">Verified Supplier</span>
+            <span class="trust-seal-brand">IndiaMART</span>
+        </div>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="cursor.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
