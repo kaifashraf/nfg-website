@@ -145,14 +145,17 @@ carousels.forEach((wrapper) => {
 function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
     const toggleBtn = document.querySelector('.mobile-menu-toggle');
+    const navbar = document.getElementById('navbar');
     
     if (menu.classList.contains('active')) {
         menu.classList.remove('active');
         toggleBtn.classList.remove('active');
+        navbar.classList.remove('menu-open');
         document.body.style.overflow = ''; // Restore scrolling
     } else {
         menu.classList.add('active');
         toggleBtn.classList.add('active');
+        navbar.classList.add('menu-open');
         document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
     }
 }
