@@ -189,9 +189,26 @@
             </div>
             <div class="nav-right-custom">
                 <a href="configurator.html" class="btn-commission">ENQUIRY</a>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-nav-links">
+            <a href="index.html" onclick="toggleMobileMenu()">HOME</a>
+            <a href="#collection" onclick="toggleMobileMenu()">COLLECTION</a>
+            <a href="about.html" onclick="toggleMobileMenu()">ABOUT US</a>
+            <a href="#gallery" onclick="toggleMobileMenu()">GALLERY</a>
+            <a href="#footer" onclick="toggleMobileMenu()">CONTACT</a>
+            <a href="configurator.html" class="mobile-enquiry-btn" onclick="toggleMobileMenu()">ENQUIRY</a>
+        </div>
+    </div>
 
     <!-- Hero -->
     <section class="hero-custom">

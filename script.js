@@ -139,6 +139,22 @@ carousels.forEach((wrapper) => {
     }
 });
 
+// --- Mobile Menu Functionality --- //
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const toggleBtn = document.querySelector('.mobile-menu-toggle');
+    
+    if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        toggleBtn.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    } else {
+        menu.classList.add('active');
+        toggleBtn.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    }
+}
+
 // --- Product Database --- //
 const products = {
     'helmet1': {
