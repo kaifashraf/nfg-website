@@ -198,7 +198,20 @@ const products = {
             'Usage/Application': 'Safety Helmet',
             'Features': 'Safety Helmet',
             'Country of Origin': 'Made in India'
+        },
+    'helmet4': {
+        title: 'Delhi Police Riot Helmet',
+        price: 'Rs 550',
+        images: ['delhi-riot-front.png', 'delhi-riot-left.png', 'delhi-riot-right.jpg'],
+        specs: {
+            'Material': 'Polycarbonate (PC) & ABS',
+            'Color': 'Black / Custom',
+            'Visor': 'Scratch-resistant Clear Visor',
+            'Usage/Application': 'Riot Control / Law Enforcement',
+            'Features': 'High Impact Resistance, Neck Protector',
+            'Country of Origin': 'Made in India'
         }
+    }
     }
 };
 
