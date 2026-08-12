@@ -511,16 +511,24 @@ img {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
-    cursor: none;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: default;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
 .gallery-image-wrapper {
     position: relative;
     aspect-ratio: 1/1;
-    background-color: #e8e6e1;
+    background-color: #f7f7f7;
     overflow: hidden;
-    border-radius: 4px;
 }
 
 .gallery-image-wrapper img {
@@ -538,19 +546,28 @@ img {
 .gallery-item-info {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding-top: var(--spacing-xs);
+    align-items: center;
+    padding: 24px;
+    background-color: #ffffff;
+}
+
+.gallery-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .gallery-item-text h3 {
     font-size: var(--text-2xl);
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin: 0;
+    color: var(--color-dark);
+    font-weight: 600;
 }
 
 .gallery-item-text p {
     font-size: var(--text-sm);
-    color: var(--color-text-light);
+    color: #444444; /* Darker, more solid text instead of faded light gray */
+    font-weight: 500;
 }
 
 /* Circular Arrow Button */
