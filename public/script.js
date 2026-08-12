@@ -188,7 +188,7 @@ const products = {
         }
     },
     'helmet3': {
-        title: 'Industrial Safety Helmet',
+        title: 'Fire Safety Helmet',
         price: 'Rs 350',
         images: ['safety-helmet-pro-main.png', 'safety-helmet-pro-left.png', 'safety-helmet-pro-right.png'],
         specs: {
