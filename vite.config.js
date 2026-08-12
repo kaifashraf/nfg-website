@@ -8,7 +8,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         about: resolve(__dirname, 'about.html'),
         configurator: resolve(__dirname, 'configurator.html'),
-        journal: resolve(__dirname, 'journal.html')
+        journal: resolve(__dirname, 'journal.html'),
+        helmets: resolve(__dirname, 'helmets.html')
       }
     }
   }
