@@ -252,13 +252,13 @@
     <section id="commissions" class="section">
         <div class="container">
             <div class="flex justify-between items-center mb-lg" style="margin-bottom: var(--spacing-lg);">
-                <h2 class="text-3xl">Our Products</h2>
-                <a href="journal.html" class="text-sm" style="text-transform: uppercase; border-bottom: 1px solid var(--color-text);">View all</a>
+                <h2 class="text-3xl">Our Helmets</h2>
+                <a href="helmets.html" class="text-sm" style="text-transform: uppercase; border-bottom: 1px solid var(--color-text);">View all</a>
             </div>
             
             <div class="gallery-grid">
                 <!-- Gallery Item 1 -->
-                <div class="gallery-item" style="position: relative;">
+                <div class="gallery-item">
                     <div class="gallery-image-wrapper carousel-wrapper">
                         <div class="carousel-track">
                             <img src="green-helmet-front.png" alt="Front View" class="carousel-slide" onerror="this.style.display='none'">
@@ -270,9 +270,8 @@
                             <span class="dot"></span>
                             <span class="dot"></span>
                         </div>
-                        <!-- Explicit Button for Modal -->
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 15; pointer-events: none;">
-                            <button onclick="openProductModal('helmet1')" style="pointer-events: auto; padding: 16px 32px; background: var(--color-accent, #c9a050); color: #fff; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.2s;">View Details & Price</button>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Click for Best Price</span>
                         </div>
                     </div>
                     <div class="gallery-item-info">
@@ -285,7 +284,7 @@
                     </div>
                 </div>
                 <!-- Gallery Item 2 -->
-                <div class="gallery-item" style="position: relative;">
+                <div class="gallery-item">
                     <div class="gallery-image-wrapper carousel-wrapper">
                         <div class="carousel-track">
                             <img src="anti-riot-right.png" alt="Anti-Riot Right View" class="carousel-slide" onerror="this.style.display='none'">
@@ -295,9 +294,8 @@
                             <span class="dot active"></span>
                             <span class="dot"></span>
                         </div>
-                        <!-- Explicit Button for Modal -->
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 15; pointer-events: none;">
-                            <button onclick="openProductModal('helmet2')" style="pointer-events: auto; padding: 16px 32px; background: var(--color-accent, #c9a050); color: #fff; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.2s;">View Details & Price</button>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Click for Best Price</span>
                         </div>
                     </div>
                     <div class="gallery-item-info">
@@ -397,6 +395,18 @@
         </div>
     </section>
 
+    <!-- Minimalist Contact Section -->
+    <section id="contact" class="contact-minimal">
+        <div class="container contact-minimal-inner">
+            <h2 class="text-3xl">Get Our Best B2B Pricing</h2>
+            <p>Leave your number and our sales team will contact you instantly.</p>
+            <form class="contact-minimal-form" onsubmit="event.preventDefault(); alert('Request sent! We will call you shortly.');">
+                <input type="tel" placeholder="Enter your phone number..." required>
+                <button type="submit">Call Me Back</button>
+            </form>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer id="footer" class="footer">
         <div class="container">
@@ -468,8 +478,13 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeProductModal()">×</button>
             <div class="modal-grid">
-                <div class="modal-image">
-                    <img id="modalImage" src="anti-riot-right.png" alt="Product Image">
+                <div class="modal-image carousel-wrapper" id="modalCarouselWrapper" style="overflow: hidden; position: relative;">
+                    <div class="carousel-track" id="modalCarouselTrack">
+                        <!-- Dynamic images inserted here -->
+                    </div>
+                    <div class="carousel-dots" id="modalCarouselDots">
+                        <!-- Dynamic dots inserted here -->
+                    </div>
                 </div>
                 <div class="modal-details">
                     <h2 id="modalTitle" class="text-3xl" style="font-family: var(--font-serif); margin-bottom: var(--spacing-xs);">Anti Riot Helmet</h2>
@@ -500,6 +515,11 @@
             </div>
         </div>
     </div>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.277-.926-3.541 0-3.891 3.166-7.058 7.067-7.059 3.893 0 7.06 3.168 7.06 7.059.001 3.891-3.165 7.058-7.059 7.058z"/></svg>
+    </a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

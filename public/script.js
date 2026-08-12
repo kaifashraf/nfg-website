@@ -97,9 +97,7 @@ function prevTestimonial() {
 setInterval(nextTestimonial, 5000);
 
 // Helmet Carousel functionality
-const carousels = document.querySelectorAll('.carousel-wrapper');
-
-carousels.forEach((wrapper) => {
+function initCarousel(wrapper) {
     const track = wrapper.querySelector('.carousel-track');
     const dots = wrapper.querySelectorAll('.carousel-dots .dot');
     
@@ -139,7 +137,10 @@ carousels.forEach((wrapper) => {
             });
         });
     }
-});
+}
+
+// Helmet Carousel functionality
+document.querySelectorAll('.carousel-wrapper').forEach(initCarousel);
 
 // --- Mobile Menu Functionality --- //
 function toggleMobileMenu() {
@@ -165,7 +166,7 @@ const products = {
     'helmet1': {
         title: 'Police Riot Helmet',
         price: 'Rs 900',
-        image: 'green-helmet-front.png',
+        images: ['green-helmet-front.png', 'green-helmet-right.png', 'green-helmet-left.png'],
         specs: {
             'Color': 'Green',
             'Country of Origin': 'Made in India',
@@ -177,7 +178,7 @@ const products = {
     'helmet2': {
         title: 'Anti-Riot Shield Helmet',
         price: 'Rs 400',
-        image: 'anti-riot-right.png',
+        images: ['anti-riot-right.png', 'anti-riot-left.png'],
         specs: {
             'Material': 'Polycarbonate',
             'Color': 'Green / Brown',
@@ -185,17 +186,49 @@ const products = {
             'Usage': 'Anti Riot Helmet',
             'Country of Origin': 'Made in India'
         }
+    },
+    'helmet3': {
+        title: 'Industrial Safety Helmet',
+        price: 'Rs 250',
+        images: ['safety-helmet-pro-main.png', 'safety-helmet-pro-left.png', 'safety-helmet-pro-right.png'],
+        specs: {
+            'Material': 'High-Density Polyethylene (HDPE)',
+            'Color': 'High-Visibility Yellow',
+            'Brand': 'NFG New Fibre Glass',
+            'Usage': 'Construction / Industrial Safety',
+            'Country of Origin': 'Made in India'
+        }
     }
 };
 
 // --- Product Modal Functionality --- //
-function openProductModal(productId) {
+function openProductModal(productId, directToContact = false) {
     const modal = document.getElementById('productModal');
     const product = products[productId];
     
     if (modal && product) {
         // Populate Data
-        document.getElementById('modalImage').src = product.image;
+        const track = document.getElementById('modalCarouselTrack');
+        const dotsContainer = document.getElementById('modalCarouselDots');
+        
+        if (track && dotsContainer && product.images) {
+            let slidesHtml = '';
+            let dotsHtml = '';
+            product.images.forEach((imgSrc, index) => {
+                slidesHtml += `<img src="${imgSrc}" alt="${product.title}" class="carousel-slide" onerror="this.style.display='none'">`;
+                dotsHtml += `<span class="dot ${index === 0 ? 'active' : ''}"></span>`;
+            });
+            track.innerHTML = slidesHtml;
+            dotsContainer.innerHTML = dotsHtml;
+            track.scrollLeft = 0; // Reset scroll
+            initCarousel(document.getElementById('modalCarouselWrapper'));
+        } else {
+            // Fallback for single image if images array is not provided
+            if (document.getElementById('modalImage')) {
+                document.getElementById('modalImage').src = product.images ? product.images[0] : (product.image || '');
+            }
+        }
+        
         document.getElementById('modalTitle').innerText = product.title;
         document.getElementById('modalPrice').innerHTML = `Approx. Price: <strong>${product.price}</strong> / Piece`;
         
@@ -214,8 +247,15 @@ function openProductModal(productId) {
         document.body.style.overflow = 'hidden'; // Prevent scrolling
         
         // Reset form state
-        document.getElementById('contactSection').style.display = 'block';
-        document.getElementById('contactFormSection').style.display = 'none';
+        if (directToContact) {
+            document.getElementById('contactSection').style.display = 'none';
+            document.getElementById('contactFormSection').style.display = 'flex';
+            document.getElementById('modalPrice').style.display = 'none';
+        } else {
+            document.getElementById('contactSection').style.display = 'block';
+            document.getElementById('contactFormSection').style.display = 'none';
+            document.getElementById('modalPrice').style.display = 'block';
+        }
         document.getElementById('customerPhone').value = '';
     }
 }
