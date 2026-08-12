@@ -202,7 +202,7 @@ const products = {
     'helmet4': {
         title: 'Delhi Police Riot Helmet',
         price: 'Rs 550',
-        images: ['delhi-riot-front.png', 'delhi-riot-left.png', 'delhi-riot-right.jpg'],
+        images: ['delhi-riot-front.png', 'delhi-riot-left.png', 'delhi-riot-right.png'],
         specs: {
             'Material': 'Polycarbonate (PC) & ABS',
             'Color': 'Black / Custom',

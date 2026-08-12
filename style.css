@@ -887,6 +887,12 @@ img[src*="safety-helmet-pro"] {
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
 }
+
+/* Premium styling for Delhi Police helmet - enhanced gloss and studio ground shadow */
+img[src*="delhi-riot"] {
+    filter: contrast(1.15) brightness(1.08) drop-shadow(0 25px 20px rgba(0,0,0,0.2)) drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+    transform: scale(1.02);
+}
 .carousel-dots {
     position: absolute;
     bottom: var(--spacing-sm);
