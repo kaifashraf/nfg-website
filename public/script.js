@@ -189,13 +189,14 @@ const products = {
     },
     'helmet3': {
         title: 'Industrial Safety Helmet',
-        price: 'Rs 250',
+        price: 'Rs 350',
         images: ['safety-helmet-pro-main.png', 'safety-helmet-pro-left.png', 'safety-helmet-pro-right.png'],
         specs: {
-            'Material': 'High-Density Polyethylene (HDPE)',
-            'Color': 'High-Visibility Yellow',
-            'Brand': 'NFG New Fibre Glass',
-            'Usage': 'Construction / Industrial Safety',
+            'Material': 'PVC',
+            'Color': 'Yellow',
+            'Size': 'Medium',
+            'Usage/Application': 'Safety Helmet',
+            'Features': 'Safety Helmet',
             'Country of Origin': 'Made in India'
         }
     }

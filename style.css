@@ -877,6 +877,15 @@ img.shiny-enhanced {
     height: 100%;
     object-fit: cover;
     scroll-snap-align: start;
+    background: radial-gradient(circle at center, #ffffff 0%, #f0f0f0 60%, #e4e4e4 100%);
+}
+
+/* Professional drop shadow and smooth bottom fade to gracefully hide the stand */
+img[src*="safety-helmet-pro"] {
+    filter: drop-shadow(0 20px 20px rgba(0,0,0,0.15)) drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+    transform: scale(1.02); /* Slight scale to make it commanding */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
 }
 .carousel-dots {
     position: absolute;
@@ -1293,4 +1302,54 @@ img.shiny-enhanced {
     .contact-minimal-form button {
         width: 100%;
     }
+}
+
+/* Direct Call Button - Premium Styling */
+.btn-call-direct {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-dark);
+    color: var(--color-dark-text) !important;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    gap: 16px;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    margin-top: 10px;
+}
+.btn-call-direct:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3);
+}
+.btn-call-direct svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+    transition: var(--transition-smooth);
+}
+.btn-call-direct:hover svg {
+    color: var(--color-dark-text);
+}
+.btn-call-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.btn-call-text .call-number {
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.2;
+    font-family: var(--font-sans);
+    letter-spacing: 0.5px;
+}
+.btn-call-text .call-response {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
 }
