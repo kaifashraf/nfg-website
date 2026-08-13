@@ -12,7 +12,8 @@ export default defineConfig({
         helmets: resolve(__dirname, 'helmets.html'),
         kneepads: resolve(__dirname, 'kneepads.html'),
         bodyguard: resolve(__dirname, 'bodyguard.html'),
-        terms: resolve(__dirname, 'terms.html')
+        terms: resolve(__dirname, 'terms.html'),
+        contact: resolve(__dirname, 'contact.html')
       }
     }
   }
