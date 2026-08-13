@@ -915,20 +915,11 @@ img.shiny-enhanced {
     flex: 0 0 100%;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 20px;
+    object-fit: cover;
     scroll-snap-align: start;
-    background: radial-gradient(circle at 50% 40%, #ffffff 0%, #e8e9eb 50%, #c4c6ca 100%);
-    box-shadow: inset 0 0 80px rgba(0,0,0,0.08);
+    background-color: #e8e9eb; /* Fallback */
 }
 
-/* Professional drop shadow and smooth bottom fade to gracefully hide the stand */
-img[src*="safety-helmet-pro"] {
-    filter: drop-shadow(0 20px 20px rgba(0,0,0,0.15)) drop-shadow(0 4px 6px rgba(0,0,0,0.05));
-    transform: scale(1.02); /* Slight scale to make it commanding */
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
-}
 
 /* Premium styling for Delhi Police helmet - enhanced gloss and studio ground shadow */
 img[src*="delhi-riot"] {
