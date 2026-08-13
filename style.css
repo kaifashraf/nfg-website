@@ -517,6 +517,7 @@ img {
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: default;
+    aspect-ratio: 1/1;
 }
 
 .gallery-item:hover {
@@ -526,7 +527,8 @@ img {
 
 .gallery-image-wrapper {
     position: relative;
-    aspect-ratio: 1/1;
+    flex: 1;
+    width: 100%;
     background-color: #f7f7f7;
     overflow: hidden;
 }
