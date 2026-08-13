@@ -1119,6 +1119,14 @@ img[src*="delhi-riot"] {
     border-radius: 0;
     text-align: center;
     letter-spacing: 2px;
+    transition: all 0.4s ease;
+}
+
+.mobile-nav-links a.mobile-enquiry-btn:hover,
+.mobile-nav-links a.mobile-enquiry-btn:active {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
 }
 
 @media (max-width: 768px) {
