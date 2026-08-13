@@ -45,3 +45,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// --- General Enquiry Modal Logic ---
+function openGeneralEnquiry(e) {
+    if(e) e.preventDefault();
+    const modal = document.getElementById('generalEnquiryModal');
+    if(modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeGeneralEnquiry() {
+    const modal = document.getElementById('generalEnquiryModal');
+    if(modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Close on outside click
+window.addEventListener('click', function(e) {
+    const modal = document.getElementById('generalEnquiryModal');
+    if(modal && e.target === modal) {
+        closeGeneralEnquiry();
+    }
+});

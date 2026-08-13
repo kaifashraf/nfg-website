@@ -240,7 +240,7 @@
                 <a href="contact.html">CONTACT</a>
             </div>
             <div class="nav-right-custom">
-                <a href="configurator.html" class="btn-commission">ENQUIRY</a>
+                <a href="#" onclick="openGeneralEnquiry(event)" class="btn-commission">ENQUIRY</a>
                 <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
                     <span></span>
                     <span></span>
@@ -264,7 +264,7 @@
             </div>
             <a href="about.html" onclick="toggleMobileMenu()">ABOUT US</a>
             <a href="contact.html" onclick="toggleMobileMenu()">CONTACT</a>
-            <a href="configurator.html" class="mobile-enquiry-btn" onclick="toggleMobileMenu()">ENQUIRY</a>
+            <a href="#" onclick="toggleMobileMenu(); openGeneralEnquiry(event);" class="mobile-enquiry-btn">ENQUIRY</a>
         </div>
     </div>
 
@@ -438,5 +438,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="cursor.js"></script>
     <script src="script.js"></script>
+
+    <!-- General Enquiry Modal -->
+    <div id="generalEnquiryModal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px; padding: 30px;">
+            <button class="modal-close" onclick="closeGeneralEnquiry()" style="color: var(--color-text);">×</button>
+            <h2 style="font-family: var(--font-serif); margin-bottom: 10px;">Submit an Enquiry</h2>
+            <p style="color: var(--color-text-light); margin-bottom: 20px; font-size: 0.9rem;">Please share your requirements and we will get back to you shortly.</p>
+            <form action="https://formsubmit.co/admin@nfg.com" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="hidden" name="_subject" value="New NFG Website Enquiry">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div>
+                    <label style="display: block; margin-bottom: 5px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Name</label>
+                    <input type="text" name="name" required style="width: 100%; padding: 12px; background: transparent; border: 1px solid rgba(0,0,0,0.2); border-radius: 4px; color: var(--color-text); font-family: var(--font-sans);">
+                </div>
+                
+                <div style="display: flex; gap: 15px;">
+                    <div style="flex: 1;">
+                        <label style="display: block; margin-bottom: 5px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Email</label>
+                        <input type="email" name="email" required style="width: 100%; padding: 12px; background: transparent; border: 1px solid rgba(0,0,0,0.2); border-radius: 4px; color: var(--color-text); font-family: var(--font-sans);">
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="display: block; margin-bottom: 5px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Phone</label>
+                        <input type="tel" name="phone" required style="width: 100%; padding: 12px; background: transparent; border: 1px solid rgba(0,0,0,0.2); border-radius: 4px; color: var(--color-text); font-family: var(--font-sans);">
+                    </div>
+                </div>
+                
+                <div>
+                    <label style="display: block; margin-bottom: 5px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Requirements / Query</label>
+                    <textarea name="requirements" rows="4" required style="width: 100%; padding: 12px; background: transparent; border: 1px solid rgba(0,0,0,0.2); border-radius: 4px; color: var(--color-text); font-family: var(--font-sans); resize: vertical;"></textarea>
+                </div>
+                
+                <button type="submit" class="btn" style="margin-top: 10px; width: 100%;">SEND ENQUIRY</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
