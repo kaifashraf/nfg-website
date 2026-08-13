@@ -478,9 +478,11 @@
         <div class="container contact-minimal-inner">
             <h2 class="text-3xl">Get Our Best B2B Pricing</h2>
             <p>Leave your number and our sales team will contact you instantly.</p>
-            <form id="minimalContactForm" onsubmit="submitMinimalContact(event)" style="margin-bottom: var(--spacing-md);">
-                <input type="tel" id="minimalPhone" placeholder="Enter your phone number..." required>
-                <button type="submit" class="btn-primary">Call Me Back</button>
+            <form id="minimalContactForm" class="premium-contact-form" onsubmit="submitMinimalContact(event)">
+                <div class="premium-input-wrapper">
+                    <input type="tel" id="minimalPhone" placeholder="Enter your phone number..." required>
+                    <button type="submit" class="premium-submit-btn">Call Me Back</button>
+                </div>
             </form>
             
             <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
