@@ -272,10 +272,10 @@ const products = {
     'bodyarmor1': {
         title: 'Full Body Tactical Armor',
         price: 'Rs 4,500',
-        images: ['Anti- Riot.jpg', 'body-armor-2.jpg'],
+        images: ['body-armor-1.jpg', 'body-armor-2.jpg'],
         specs: {
             'Material': 'High-Impact Polycarbonate',
-            'Color': 'Black',
+            'Color': 'Camouflage',
             'Fit': 'Adjustable Straps',
             'Usage': 'Riot Control / Tactical',
             'Country of Origin': 'Made in India'
