@@ -8,23 +8,57 @@
     <style>
         /* Specific Styles for Helmets Page */
         .helmets-hero {
-            padding-top: 150px;
-            padding-bottom: 80px;
-            text-align: center;
-            background: linear-gradient(to bottom, var(--color-bg), #e0ddd5);
+            padding-top: 180px;
+            padding-bottom: 120px;
+            background-color: var(--color-dark);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .helmets-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
         }
         
+        .helmets-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .helmets-hero-label {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+
         .helmets-hero h1 {
-            font-size: var(--text-5xl);
-            margin-bottom: var(--spacing-sm);
-            font-family: var(--font-serif);
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-family: var(--font-sans);
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
         
         .helmets-hero p {
-            color: var(--color-text-light);
-            font-size: var(--text-xl);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.25rem;
             max-width: 600px;
-            margin: 0 auto;
+            line-height: 1.6;
         }
 
         .category-section {
@@ -237,15 +271,18 @@
     <!-- Hero Section -->
     <section class="helmets-hero">
         <div class="container">
-            <div class="hero-subtitle-custom" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 16px;">
+            <div class="helmets-hero-content">
+                <div class="hero-subtitle-custom" style="display: flex; align-items: center; justify-content: flex-start; gap: 8px; margin-bottom: 16px;">
                     <a href="https://trustseal.indiamart.com/members/nfg-new-fibre-glass-private-limited" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); display: inline-flex; align-items: center; margin-right: 8px;" title="View IndiaMART Certificate">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
                     </a>
                     <span class="line-custom" style="background-color: var(--color-accent); width: 40px; height: 1px; display: inline-block;"></span>
                     <span class="text-custom" style="color: var(--color-accent); letter-spacing: 2px; font-size: 0.9rem; font-weight: 500;">SINCE 1971</span>
                 </div>
-                <h1>Body Protection</h1>
-            <p>Engineered for absolute security. Premium Tactical and Riot body armor manufactured in India.</p>
+                <div class="helmets-hero-label">Tactical & Safety Division</div>
+                <h1>B2B Body Armor.</h1>
+                <p>Engineered for absolute security. Premium Tactical and Riot body armor manufactured in India for global defense sectors.</p>
+            </div>
         </div>
     </section>
 
