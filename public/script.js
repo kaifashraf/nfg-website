@@ -223,6 +223,18 @@ const products = {
             'Usage': 'Tactical / Riot Control',
             'Country of Origin': 'Made in India'
         }
+    },
+    'kneepad2': {
+        title: 'Tactical Combat Kneepads',
+        price: 'Rs 1,400',
+        images: ['kneepad-4.jpg', 'kneepad-5.jpg', 'kneepad-3.jpg'],
+        specs: {
+            'Material': 'High-Density Polymer',
+            'Color': 'Green / Black',
+            'Fit': 'Velcro Adjustable',
+            'Usage': 'Combat / Military',
+            'Country of Origin': 'Made in India'
+        }
     }
 };
 
