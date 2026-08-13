@@ -8,23 +8,57 @@
     <style>
         /* Specific Styles for Helmets Page */
         .helmets-hero {
-            padding-top: 150px;
-            padding-bottom: 80px;
-            text-align: center;
-            background: linear-gradient(to bottom, var(--color-bg), #e0ddd5);
+            padding-top: 180px;
+            padding-bottom: 120px;
+            background-color: var(--color-dark);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .helmets-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
         }
         
+        .helmets-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .helmets-hero-label {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+
         .helmets-hero h1 {
-            font-size: var(--text-5xl);
-            margin-bottom: var(--spacing-sm);
-            font-family: var(--font-serif);
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-family: var(--font-sans);
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
         
         .helmets-hero p {
-            color: var(--color-text-light);
-            font-size: var(--text-xl);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.25rem;
             max-width: 600px;
-            margin: 0 auto;
+            line-height: 1.6;
         }
 
         .category-section {
@@ -237,8 +271,11 @@
     <!-- Hero Section -->
     <section class="helmets-hero">
         <div class="container">
-            <h1>Our Helmet Collection</h1>
-            <p>Engineered for absolute security. Premium B2B Anti-Riot and Safety helmets manufactured in India.</p>
+            <div class="helmets-hero-content">
+                <div class="helmets-hero-label">Tactical & Safety Division</div>
+                <h1>B2B Helmet Collection.</h1>
+                <p>Engineered for absolute security. Premium Anti-Riot and Safety helmets manufactured in India for global defense and industrial sectors.</p>
+            </div>
         </div>
     </section>
 
