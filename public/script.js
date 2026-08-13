@@ -244,7 +244,8 @@ const products = {
             'Usage/Application': 'Safety Helmet',
             'Features': 'Safety Helmet',
             'Country of Origin': 'Made in India'
-        },
+        }
+    },
     'helmet4': {
         title: 'Delhi Police Riot Helmet',
         price: 'Rs 550',
