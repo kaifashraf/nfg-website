@@ -98,45 +98,71 @@ setInterval(nextTestimonial, 5000);
 
 // Helmet Carousel functionality
 function initCarousel(wrapper) {
-    const track = wrapper.querySelector('.carousel-track');
-    const dots = wrapper.querySelectorAll('.carousel-dots .dot');
+    let track = wrapper.querySelector('.carousel-track');
+    let dots = wrapper.querySelectorAll('.carousel-dots .dot');
     
-    if (track && dots.length > 0) {
-        track.style.cursor = 'pointer';
-        
-        // Update dots on scroll
-        track.addEventListener('scroll', () => {
-            const index = Math.round(track.scrollLeft / track.clientWidth);
-            dots.forEach((dot, i) => {
-                if(i === index) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
+    if (!track || dots.length === 0) return;
+
+    // Prevent duplicate event listeners if initialized multiple times (e.g. in modals)
+    if (wrapper.dataset.initialized === 'true') {
+        const newTrack = track.cloneNode(true);
+        track.parentNode.replaceChild(newTrack, track);
+        track = newTrack;
+        dots = wrapper.querySelectorAll('.carousel-dots .dot');
+    }
+    wrapper.dataset.initialized = 'true';
+
+    track.style.cursor = 'pointer';
+    
+    // Update dots on scroll
+    track.addEventListener('scroll', () => {
+        const index = Math.round(track.scrollLeft / track.clientWidth);
+        dots.forEach((dot, i) => {
+            if(i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
         });
-        
-        // Click track to advance
-        track.addEventListener('click', () => {
-            let currentIndex = Math.round(track.scrollLeft / track.clientWidth);
-            let nextIndex = (currentIndex + 1) % dots.length;
+    });
+    
+    function advanceCarousel() {
+        if (!track.clientWidth) return; // Don't scroll if hidden
+        let currentIndex = Math.round(track.scrollLeft / track.clientWidth);
+        let nextIndex = (currentIndex + 1) % dots.length;
+        track.scrollTo({
+            left: nextIndex * track.clientWidth,
+            behavior: 'smooth'
+        });
+    }
+
+    // Click track to advance manually
+    track.addEventListener('click', advanceCarousel);
+    
+    // Click dots to jump
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', (e) => {
+            e.stopPropagation();
             track.scrollTo({
-                left: nextIndex * track.clientWidth,
+                left: i * track.clientWidth,
                 behavior: 'smooth'
             });
         });
-        
-        // Click dots to jump
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', (e) => {
-                e.stopPropagation();
-                track.scrollTo({
-                    left: i * track.clientWidth,
-                    behavior: 'smooth'
-                });
-            });
-        });
+    });
+
+    // Auto advance every 3 seconds
+    if (wrapper.carouselInterval) {
+        clearInterval(wrapper.carouselInterval);
     }
+    
+    wrapper.carouselInterval = setInterval(advanceCarousel, 3000);
+    
+    // Pause auto-advance on hover
+    wrapper.addEventListener('mouseenter', () => clearInterval(wrapper.carouselInterval));
+    wrapper.addEventListener('mouseleave', () => {
+        clearInterval(wrapper.carouselInterval);
+        wrapper.carouselInterval = setInterval(advanceCarousel, 3000);
+    });
 }
 
 // Helmet Carousel functionality
