@@ -136,8 +136,28 @@ function initCarousel(wrapper) {
         });
     }
 
-    // Click track to advance manually
-    track.addEventListener('click', advanceCarousel);
+    // Click track to advance manually (directional)
+    track.addEventListener('click', (e) => {
+        if (!track.clientWidth) return;
+        
+        const rect = track.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const currentIndex = Math.round(track.scrollLeft / track.clientWidth);
+        let targetIndex;
+        
+        if (clickX < rect.width / 2) {
+            // Clicked left half -> go to previous
+            targetIndex = (currentIndex - 1 + dots.length) % dots.length;
+        } else {
+            // Clicked right half -> go to next
+            targetIndex = (currentIndex + 1) % dots.length;
+        }
+        
+        track.scrollTo({
+            left: targetIndex * track.clientWidth,
+            behavior: 'smooth'
+        });
+    });
     
     // Click dots to jump
     dots.forEach((dot, i) => {
