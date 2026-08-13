@@ -5,10 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!cursorDot || !cursorOutline) return;
 
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
+    function updateCursor(posX, posY) {
         // Animate dot instantly
         if (typeof gsap !== 'undefined') {
             gsap.to(cursorDot, {
@@ -30,7 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorOutline.style.left = `${posX}px`;
             cursorOutline.style.top = `${posY}px`;
         }
+    }
+
+    window.addEventListener('mousemove', (e) => {
+        updateCursor(e.clientX, e.clientY);
     });
+
+    window.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length > 0) {
+            updateCursor(e.touches[0].clientX, e.touches[0].clientY);
+        }
+    }, { passive: true });
+
+    window.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length > 0) {
+            updateCursor(e.touches[0].clientX, e.touches[0].clientY);
+        }
+    }, { passive: true });
 
     // Hover effects on clickable elements
     const interactiveElements = document.querySelectorAll('a, button, .color-option');
