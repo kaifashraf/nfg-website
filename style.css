@@ -792,6 +792,7 @@ img {
     margin-bottom: var(--spacing-sm);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    animation: pulse-trust 2.5s infinite;
 }
 
 .trust-seal-fixed:hover, .trust-seal-hero:hover {
