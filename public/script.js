@@ -289,13 +289,15 @@ function showContactForm() {
 
 function submitInterest() {
     const phone = document.getElementById('customerPhone').value;
+    const productName = document.getElementById('modalTitle').innerText;
+    
     if (!phone || phone.trim() === '') {
         alert("Please enter a valid contact number.");
         return;
     }
     
     // Simulate sending a notification to the company
-    alert("Request Sent! The NFG Sales Team has been notified and will contact you at " + phone + " with the latest pricing.");
+    alert(`Request Sent! The NFG Sales Team has been notified that you are interested in the ${productName}. They will contact you at ${phone} with the latest pricing.`);
     closeProductModal();
 }
 
