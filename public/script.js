@@ -428,4 +428,11 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('touchend', () => btn.classList.remove('active-state'), {passive: true});
         btn.addEventListener('touchcancel', () => btn.classList.remove('active-state'), {passive: true});
     });
+
+    const galleryWrappers = document.querySelectorAll('.gallery-image-wrapper, .product-image-container');
+    galleryWrappers.forEach(wrapper => {
+        wrapper.addEventListener('touchstart', () => wrapper.classList.add('active-state'), {passive: true});
+        wrapper.addEventListener('touchend', () => wrapper.classList.remove('active-state'), {passive: true});
+        wrapper.addEventListener('touchcancel', () => wrapper.classList.remove('active-state'), {passive: true});
+    });
 });

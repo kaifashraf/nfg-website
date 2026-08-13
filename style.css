@@ -1227,7 +1227,9 @@ img[src*="delhi-riot"] {
 }
 
 .gallery-image-wrapper:hover .quick-quote-overlay,
-.product-image-container:hover .quick-quote-overlay {
+.gallery-image-wrapper.active-state .quick-quote-overlay,
+.product-image-container:hover .quick-quote-overlay,
+.product-image-container.active-state .quick-quote-overlay {
     opacity: 1;
 }
 
