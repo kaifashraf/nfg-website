@@ -1,23 +1,36 @@
 // Navbar Scroll Effect
 const navbar = document.getElementById('navbar');
+let isNavbarTicking = false;
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (!isNavbarTicking) {
+        window.requestAnimationFrame(() => {
+            if (navbar) {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+            isNavbarTicking = false;
+        });
+        isNavbarTicking = true;
     }
-});
+}, { passive: true });
 
 // GSAP Animations
 if (typeof gsap !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 
     // Hero Animation
-    gsap.from(".hero h1", { y: 50, opacity: 0, duration: 1, ease: "power3.out", delay: 0.2 });
-    gsap.from(".hero p", { y: 30, opacity: 0, duration: 1, ease: "power3.out", delay: 0.4 });
-    gsap.from(".hero .btn", { y: 20, opacity: 0, duration: 1, stagger: 0.1, ease: "power3.out", delay: 0.6 });
-    gsap.from(".hero-image-placeholder", { y: 50, opacity: 0, duration: 1.2, ease: "power3.out", delay: 0.8 });
+    if (document.querySelector(".hero")) {
+        gsap.from(".hero h1", { y: 50, opacity: 0, duration: 1, ease: "power3.out", delay: 0.2 });
+        gsap.from(".hero p", { y: 30, opacity: 0, duration: 1, ease: "power3.out", delay: 0.4 });
+        gsap.from(".hero .btn", { y: 20, opacity: 0, duration: 1, stagger: 0.1, ease: "power3.out", delay: 0.6 });
+        if (document.querySelector(".hero-image-placeholder")) {
+            gsap.from(".hero-image-placeholder", { y: 50, opacity: 0, duration: 1.2, ease: "power3.out", delay: 0.8 });
+        }
+    }
 
     // Section Titles
     gsap.utils.toArray('section h2').forEach(title => {
@@ -94,7 +107,9 @@ function prevTestimonial() {
 }
 
 // Auto advance testimonials
-setInterval(nextTestimonial, 5000);
+if (testimonials.length > 0) {
+    setInterval(nextTestimonial, 5000);
+}
 
 // Helmet Carousel functionality
 function initCarousel(wrapper) {

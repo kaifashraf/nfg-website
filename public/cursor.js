@@ -29,58 +29,58 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    let cursorX = 0;
+    let cursorY = 0;
+    let isCursorTicking = false;
+
+    function renderCursor() {
+        updateCursor(cursorX, cursorY);
+        isCursorTicking = false;
+    }
+
     window.addEventListener('mousemove', (e) => {
-        updateCursor(e.clientX, e.clientY);
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+        if (!isCursorTicking) {
+            requestAnimationFrame(renderCursor);
+            isCursorTicking = true;
+        }
     });
 
     window.addEventListener('touchmove', (e) => {
         if (e.touches && e.touches.length > 0) {
-            updateCursor(e.touches[0].clientX, e.touches[0].clientY);
+            cursorX = e.touches[0].clientX;
+            cursorY = e.touches[0].clientY;
+            if (!isCursorTicking) {
+                requestAnimationFrame(renderCursor);
+                isCursorTicking = true;
+            }
         }
     }, { passive: true });
 
     window.addEventListener('touchstart', (e) => {
         if (e.touches && e.touches.length > 0) {
-            updateCursor(e.touches[0].clientX, e.touches[0].clientY);
+            cursorX = e.touches[0].clientX;
+            cursorY = e.touches[0].clientY;
+            if (!isCursorTicking) {
+                requestAnimationFrame(renderCursor);
+                isCursorTicking = true;
+            }
         }
     }, { passive: true });
 
-    // Hover effects on clickable elements
-    const interactiveElements = document.querySelectorAll('a, button, .color-option');
-    
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
+    // Hover effects on clickable elements via event delegation
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest('a, button, .color-option')) {
             cursorOutline.classList.add('hover');
-        });
-        
-        el.addEventListener('mouseleave', () => {
+        }
+    });
+    
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest('a, button, .color-option')) {
             cursorOutline.classList.remove('hover');
-        });
+        }
     });
 });
 
-// --- General Enquiry Modal Logic ---
-function openGeneralEnquiry(e) {
-    if(e) e.preventDefault();
-    const modal = document.getElementById('generalEnquiryModal');
-    if(modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeGeneralEnquiry() {
-    const modal = document.getElementById('generalEnquiryModal');
-    if(modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-// Close on outside click
-window.addEventListener('click', function(e) {
-    const modal = document.getElementById('generalEnquiryModal');
-    if(modal && e.target === modal) {
-        closeGeneralEnquiry();
-    }
-});
+// Duplicate General Enquiry Modal Logic removed (handled in script.js)
