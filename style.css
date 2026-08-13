@@ -915,9 +915,11 @@ img.shiny-enhanced {
     flex: 0 0 100%;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 20px;
     scroll-snap-align: start;
-    background: radial-gradient(circle at center, #ffffff 0%, #f0f0f0 60%, #e4e4e4 100%);
+    background: radial-gradient(circle at 50% 40%, #ffffff 0%, #e8e9eb 50%, #c4c6ca 100%);
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.08);
 }
 
 /* Professional drop shadow and smooth bottom fade to gracefully hide the stand */
