@@ -211,7 +211,18 @@ const products = {
             'Features': 'High Impact Resistance, Neck Protector',
             'Country of Origin': 'Made in India'
         }
-    }
+    },
+    'kneepad1': {
+        title: 'Tactical Defender Kneepads',
+        price: 'Rs 1,200',
+        images: ['kneepad-1.jpg', 'kneepad-2.jpg', 'kneepad-3.jpg'],
+        specs: {
+            'Material': 'High-Impact Polymer & Nylon',
+            'Color': 'Black',
+            'Fit': 'Adjustable Straps',
+            'Usage': 'Tactical / Riot Control',
+            'Country of Origin': 'Made in India'
+        }
     }
 };
 
