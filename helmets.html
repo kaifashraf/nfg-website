@@ -405,38 +405,46 @@
     </section>
 
     <!-- Footer -->
-    <footer id="footer" style="background-color: #111; color: #fff; padding: var(--spacing-xl) 0 var(--spacing-md) 0;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg); margin-bottom: var(--spacing-xl);">
-                <div>
-                    <h3 style="font-family: var(--font-serif); font-size: var(--text-2xl); margin-bottom: var(--spacing-sm);">NFG</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); line-height: 1.6;">
-                        Since 1975.<br>
-                        Engineered fibreglass for absolute security.
-                    </p>
+    <footer class="footer" style="background-color: #111; color: #f4f4f4; border-top: 1px solid #222; padding: 80px 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+                
+                <!-- Col 1: Brand -->
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                        <span style="font-family: var(--font-serif); font-size: 1.2rem; letter-spacing: 1px; color: #fff;">NFG</span>
+                        <div style="width: 24px; height: 24px; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%;"></div>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 5px;">Since 1975.</p>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; max-width: 280px; line-height: 1.5;">Engineered fibreglass for absolute security.</p>
                 </div>
+                
+                <!-- Col 2: Products -->
                 <div>
-                    <h4 style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 2px; margin-bottom: var(--spacing-md); color: var(--color-accent);">Products</h4>
-                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--spacing-sm);">
-                        <li><a href="helmets.html#military" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: var(--text-sm); transition: color 0.3s;">Military Helmets</a></li>
-                        <li><a href="helmets.html#safety" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: var(--text-sm); transition: color 0.3s;">Safety Helmets</a></li>
-                        <li><a href="configurator.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: var(--text-sm); transition: color 0.3s;">Custom Inquiry</a></li>
-                    </ul>
+                    <h4 style="color: #a88a55; font-family: var(--font-serif); font-weight: normal; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; font-size: 0.9rem;">Products</h4>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <a href="helmets.html" style="color: #e0e0e0; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">Military Helmets</a>
+                        <a href="helmets.html" style="color: #e0e0e0; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">Safety Helmets</a>
+                        <a href="configurator.html" style="color: #e0e0e0; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">Custom Inquiry</a>
+                    </div>
                 </div>
+                
+                <!-- Col 3: Contact -->
                 <div>
-                    <h4 style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 2px; margin-bottom: var(--spacing-md); color: var(--color-accent);">Contact</h4>
-                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--spacing-sm);">
-                        <li style="color: rgba(255,255,255,0.7); font-size: var(--text-sm);">B-24/2, Okhla Industrial Area,<br>Phase II, New Delhi - 110020</li>
-                        <li><a href="tel:+911141617466" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: var(--text-sm);">+91 11 4161 7466</a></li>
-                        <li><a href="mailto:info@nfg.co.in" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: var(--text-sm);">info@nfg.co.in</a></li>
-                    </ul>
+                    <h4 style="color: #a88a55; font-family: var(--font-serif); font-weight: normal; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; font-size: 0.9rem;">Contact</h4>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <p style="color: #e0e0e0; font-size: 0.95rem; line-height: 1.6; max-width: 300px;">B-24/2, Okhla Industrial Area,<br>Phase II, New Delhi - 110020</p>
+                        <a href="tel:+911141617466" style="color: #e0e0e0; text-decoration: none; font-size: 0.95rem;">+91 11 4161 7466</a>
+                        <a href="mailto:info@nfg.co.in" style="color: #e0e0e0; text-decoration: none; font-size: 0.95rem;">info@nfg.co.in</a>
+                    </div>
                 </div>
+                
             </div>
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--spacing-md); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-sm);">
-                <p style="color: rgba(255,255,255,0.5); font-size: var(--text-xs);">&copy; 2024 New Fibre Glass Private Limited. All rights reserved.</p>
-                <div style="display: flex; gap: var(--spacing-sm);">
-                    <a href="#" style="color: rgba(255,255,255,0.5); font-size: var(--text-xs); text-decoration: none;">Privacy Policy</a>
-                    <a href="#" style="color: rgba(255,255,255,0.5); font-size: var(--text-xs); text-decoration: none;">Terms of Service</a>
+            <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: rgba(255,255,255,0.5);">
+                <p>&copy; 2026 NFG New Fibre Glass. All rights reserved.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="https://trustseal.indiamart.com/members/nfg-new-fibre-glass-private-limited" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">IndiaMART</a>
+                    <a href="terms.html" style="color: inherit; text-decoration: none;">Terms & Conditions</a>
                 </div>
             </div>
         </div>
