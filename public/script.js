@@ -169,20 +169,6 @@ function initCarousel(wrapper) {
             });
         });
     });
-
-    // Auto advance every 3 seconds
-    if (wrapper.carouselInterval) {
-        clearInterval(wrapper.carouselInterval);
-    }
-    
-    wrapper.carouselInterval = setInterval(advanceCarousel, 3000);
-    
-    // Pause auto-advance on hover
-    wrapper.addEventListener('mouseenter', () => clearInterval(wrapper.carouselInterval));
-    wrapper.addEventListener('mouseleave', () => {
-        clearInterval(wrapper.carouselInterval);
-        wrapper.carouselInterval = setInterval(advanceCarousel, 3000);
-    });
 }
 
 // Helmet Carousel functionality
