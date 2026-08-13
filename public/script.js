@@ -406,3 +406,13 @@ window.addEventListener('click', function(e) {
         closeGeneralEnquiry();
     }
 });
+
+// Mobile button hover state fix for iOS/Safari
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileEnquiryBtns = document.querySelectorAll('.mobile-enquiry-btn');
+    mobileEnquiryBtns.forEach(btn => {
+        btn.addEventListener('touchstart', () => btn.classList.add('active-state'), {passive: true});
+        btn.addEventListener('touchend', () => btn.classList.remove('active-state'), {passive: true});
+        btn.addEventListener('touchcancel', () => btn.classList.remove('active-state'), {passive: true});
+    });
+});

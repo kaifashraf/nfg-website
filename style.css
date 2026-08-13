@@ -1123,10 +1123,12 @@ img[src*="delhi-riot"] {
 }
 
 .mobile-nav-links a.mobile-enquiry-btn:hover,
-.mobile-nav-links a.mobile-enquiry-btn:active {
-    background-color: #111;
-    color: #fff;
-    border-color: #111;
+.mobile-nav-links a.mobile-enquiry-btn:active,
+.mobile-nav-links a.mobile-enquiry-btn:focus,
+.mobile-nav-links a.mobile-enquiry-btn.active-state {
+    background-color: #111 !important;
+    color: #fff !important;
+    border-color: #111 !important;
 }
 
 @media (max-width: 768px) {
