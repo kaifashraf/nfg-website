@@ -11,7 +11,8 @@ export default defineConfig({
         journal: resolve(__dirname, 'journal.html'),
         helmets: resolve(__dirname, 'helmets.html'),
         kneepads: resolve(__dirname, 'kneepads.html'),
-        bodyguard: resolve(__dirname, 'bodyguard.html')
+        bodyguard: resolve(__dirname, 'bodyguard.html'),
+        terms: resolve(__dirname, 'terms.html')
       }
     }
   }
