@@ -245,6 +245,19 @@ const products = {
             'Country of Origin': 'Made in India'
         }
     },
+    'helmet5': {
+        title: 'Sports Safety Helmet',
+        price: 'Get Best Quote',
+        images: ['cricket-helmet-front.png', 'cricket-helmet-right.png', 'cricket-helmet-left.png', 'cricket-helmet-back.png'],
+        specs: {
+            'Material': 'Fiberglass Shell',
+            'Color': 'Navy Blue',
+            'Visor': 'Metal Face Grill',
+            'Usage/Application': 'Sports Safety',
+            'Features': 'Lightweight, High Impact Resistance',
+            'Country of Origin': 'Made in India'
+        }
+    },
     'kneepad1': {
         title: 'Tactical Defender Kneepads',
         price: 'Rs 1,200',
