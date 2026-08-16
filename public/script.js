@@ -646,3 +646,117 @@ document.addEventListener('DOMContentLoaded', () => {
         wrapper.addEventListener('touchcancel', () => wrapper.classList.remove('active-state'), {passive: true});
     });
 });
+
+// --- Global Search Functionality --- //
+document.addEventListener('DOMContentLoaded', () => {
+    // Inject Search HTML
+    const searchHTML = 
+        <div class="search-modal" id="searchModal">
+            <button class="search-close-btn" onclick="closeSearchModal()" aria-label="Close Search">
+                <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+            </button>
+            <div class="search-modal-content">
+                <div class="search-input-wrapper">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search for products, materials, series..." autocomplete="off">
+                </div>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+        </div>
+    ;
+    document.body.insertAdjacentHTML('beforeend', searchHTML);
+
+    const searchInput = document.getElementById('searchInput');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            handleSearch(e.target.value.toLowerCase());
+        });
+    }
+
+    // Check for open URL param
+    const urlParams = new URLSearchParams(window.location.search);
+    const openProduct = urlParams.get('open');
+    if (openProduct && typeof openProductModal === 'function') {
+        // slight delay to let DOM settle
+        setTimeout(() => {
+            openProductModal(openProduct);
+        }, 500);
+    }
+});
+
+function openSearchModal() {
+    const modal = document.getElementById('searchModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => document.getElementById('searchInput').focus(), 100);
+    }
+}
+
+function closeSearchModal() {
+    const modal = document.getElementById('searchModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        document.getElementById('searchInput').value = '';
+        document.getElementById('searchResults').innerHTML = '';
+    }
+}
+
+function getProductPageUrl(id) {
+    if (id.startsWith('helmet')) return 'helmets.html';
+    if (id.startsWith('kneepad')) return 'kneepads.html';
+    if (id.startsWith('bodyguard')) return 'bodyguard.html';
+    return 'index.html';
+}
+
+function handleSearch(query) {
+    const resultsContainer = document.getElementById('searchResults');
+    if (!query.trim()) {
+        resultsContainer.innerHTML = '';
+        return;
+    }
+
+    const matchedProducts = [];
+
+    // Filter products
+    for (const [id, data] of Object.entries(products)) {
+        let match = false;
+        if (data.title && data.title.toLowerCase().includes(query)) match = true;
+        
+        if (!match && data.specs) {
+            for (const val of Object.values(data.specs)) {
+                if (val && val.toLowerCase().includes(query)) {
+                    match = true;
+                    break;
+                }
+            }
+        }
+        
+        if (match) {
+            matchedProducts.push({ id, ...data });
+        }
+    }
+
+    // Render results
+    if (matchedProducts.length === 0) {
+        resultsContainer.innerHTML = '<div style="color: rgba(255,255,255,0.5); padding: 20px;">No matching products found.</div>';
+        return;
+    }
+
+    resultsContainer.innerHTML = matchedProducts.map(p => {
+        const pageUrl = getProductPageUrl(p.id);
+        const imagePath = (p.images && p.images.length > 0) ? p.images[0] : '';
+        const category = p.specs ? p.specs['Usage'] || p.specs['Brand'] || 'Product' : 'Product';
+        
+        return 
+            <a href=" + pageUrl + ?open= + p.id + " class="search-result-item" onclick="closeSearchModal()">
+                <img src=" + imagePath + " alt=" + p.title + " class="search-result-image" onerror="this.style.display='none'">
+                <div class="search-result-info">
+                    <span class="search-result-title"> + p.title + </span>
+                    <span class="search-result-cat"> + category + </span>
+                </div>
+            </a>
+        ;
+    }).join('');
+}
