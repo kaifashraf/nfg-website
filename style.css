@@ -862,22 +862,18 @@ img {
     bottom: 24px;
     left: 24px;
     z-index: 1000;
-    background: #fff;
-    border: 1.5px solid #e0e0e0;
-    padding: 10px 16px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #1a1a1a;
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: block;
     text-decoration: none;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.92;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .trust-seal-fixed:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    transform: scale(1.05);
+    opacity: 1;
 }
 
 /* Modal */
