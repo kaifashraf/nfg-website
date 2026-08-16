@@ -689,7 +689,10 @@ function openSearchModal() {
     if (modal) {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
-        setTimeout(() => document.getElementById('searchInput').focus(), 100);
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.focus(); // Synchronous focus is required for mobile keyboards to open automatically
+        }
     }
 }
 
