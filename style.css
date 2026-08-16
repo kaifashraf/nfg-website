@@ -857,92 +857,27 @@ img {
 }
 
 /* Fixed Trust Seal */
-@keyframes pulse-trust {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 166, 80, 0.3);
-    }
-    70% {
-        box-shadow: 0 0 0 12px rgba(0, 166, 80, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 166, 80, 0);
-    }
-}
-
 .trust-seal-fixed {
     position: fixed;
-    bottom: 30px;
-    left: 30px;
+    bottom: 24px;
+    left: 24px;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 2px solid rgba(0, 166, 80, 0.3);
-    padding: 14px 22px;
+    background: #fff;
+    border: 1.5px solid #e0e0e0;
+    padding: 10px 16px;
     border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
     color: #1a1a1a;
     text-decoration: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-    animation: pulse-trust 2.5s infinite;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.trust-seal-hero {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.95);
-    border: 1.5px solid rgba(0, 166, 80, 0.3);
-    padding: 10px 18px;
-    border-radius: 6px;
-    color: #1a1a1a;
-    text-decoration: none;
-    margin-bottom: var(--spacing-sm);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    animation: pulse-trust 2.5s infinite;
-}
-
-.trust-seal-fixed:hover, .trust-seal-hero:hover {
+.trust-seal-fixed:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-}
-
-.trust-seal-icon {
-    color: #00a650;
-    width: 28px;
-    height: 28px;
-}
-
-.trust-seal-hero .trust-seal-icon {
-    width: 24px;
-    height: 24px;
-}
-
-.trust-seal-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.trust-seal-title {
-    font-family: var(--font-sans);
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #555;
-    margin-bottom: 2px;
-}
-
-.trust-seal-brand {
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #111;
-    line-height: 1;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
 
 /* Modal */
@@ -1313,17 +1248,11 @@ img[src*="delhi-riot"] {
     
     /* Trust Seal */
     .trust-seal-fixed {
-        bottom: 15px;
-        left: 15px;
-        padding: 10px 15px;
-        gap: 10px;
-    }
-    .trust-seal-icon {
-        width: 20px;
-        height: 20px;
-    }
-    .trust-seal-brand {
-        font-size: 0.9rem;
+        bottom: 12px;
+        left: 12px;
+        padding: 8px 12px;
+        gap: 8px;
+        border-radius: 6px;
     }
 }
 
