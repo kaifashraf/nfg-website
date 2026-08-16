@@ -647,6 +647,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
 // --- Global Search Functionality --- //
 document.addEventListener('DOMContentLoaded', () => {
     // Inject Search HTML
@@ -747,16 +748,13 @@ function handleSearch(query) {
     resultsContainer.innerHTML = matchedProducts.map(p => {
         const pageUrl = getProductPageUrl(p.id);
         const imagePath = (p.images && p.images.length > 0) ? p.images[0] : '';
-        const category = p.specs ? p.specs['Usage'] || p.specs['Brand'] || 'Product' : 'Product';
+        const category = p.specs && p.specs['Usage'] ? p.specs['Usage'] : (p.specs && p.specs['Brand'] ? p.specs['Brand'] : 'Product');
         
-        return 
-            <a href=" + pageUrl + ?open= + p.id + " class="search-result-item" onclick="closeSearchModal()">
-                <img src=" + imagePath + " alt=" + p.title + " class="search-result-image" onerror="this.style.display='none'">
-                <div class="search-result-info">
-                    <span class="search-result-title"> + p.title + </span>
-                    <span class="search-result-cat"> + category + </span>
-                </div>
-            </a>
-        ;
+        return '<a href="' + pageUrl + '?open=' + p.id + '" class="search-result-item" onclick="closeSearchModal()">' +
+               '<img src="' + imagePath + '" alt="' + p.title + '" class="search-result-image" onerror="this.style.display=\'none\'">' +
+               '<div class="search-result-info">' +
+               '<span class="search-result-title">' + p.title + '</span>' +
+               '<span class="search-result-cat">' + category + '</span>' +
+               '</div></a>';
     }).join('');
 }
