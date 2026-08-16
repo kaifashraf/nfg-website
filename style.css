@@ -1917,3 +1917,9 @@ img[src*="delhi-riot"] {
         font-size: 1rem;
     }
 }
+
+.nav-right-custom {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
