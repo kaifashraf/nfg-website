@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/nfg-website/',
+  base: './',
   build: {
     rollupOptions: {
       input: {

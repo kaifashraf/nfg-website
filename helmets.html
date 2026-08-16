@@ -83,17 +83,21 @@
         }
 
         /* Specific Backgrounds for Categories to make them distinct */
-        .military-section {
+        .military-section, .tactical-section {
             background-color: var(--color-dark);
             color: var(--color-dark-text);
         }
         
-        .military-section .category-header p {
+        .military-section .category-header p, .tactical-section .category-header p {
             color: var(--color-accent);
         }
 
         .safety-section {
             background-color: var(--color-bg);
+        }
+
+        .civil-section {
+            background-color: #f0f4f8; /* Soft light slate blue-gray for a premium light aesthetic */
         }
 
         /* Grid specific to this page */
@@ -112,7 +116,7 @@
             cursor: pointer;
         }
 
-        .military-section .product-card {
+        .military-section .product-card, .tactical-section .product-card {
             background: rgba(255,255,255,0.05);
         }
 
@@ -121,7 +125,7 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .military-section .product-card:hover {
+        .military-section .product-card:hover, .tactical-section .product-card:hover {
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
@@ -134,7 +138,7 @@
             position: relative;
         }
 
-        .military-section .product-image-container {
+        .military-section .product-image-container, .tactical-section .product-image-container {
             background-color: #1a1a1a;
         }
 
@@ -166,7 +170,7 @@
             margin-bottom: var(--spacing-sm);
         }
 
-        .military-section .product-info p {
+        .military-section .product-info p, .tactical-section .product-info p {
             color: #888;
         }
 
@@ -187,12 +191,12 @@
             color: var(--color-bg);
         }
 
-        .military-section .btn-view {
+        .military-section .btn-view, .tactical-section .btn-view {
             border-color: var(--color-accent);
             color: var(--color-accent);
         }
         
-        .military-section .btn-view:hover {
+        .military-section .btn-view:hover, .tactical-section .btn-view:hover {
             background: var(--color-accent);
             color: var(--color-dark);
         }
@@ -206,7 +210,7 @@
             color: var(--color-text-light);
         }
 
-        .military-section .empty-placeholder {
+        .military-section .empty-placeholder, .tactical-section .empty-placeholder {
             border-color: rgba(255,255,255,0.2);
             color: #888;
         }
@@ -231,7 +235,17 @@
                 <div class="nav-dropdown">
                     <a class="nav-dropdown-toggle">PRODUCTS ▾</a>
                     <div class="nav-dropdown-content">
-                        <a href="helmets.html">Helmets</a>
+                        <div class="nav-dropdown sub-dropdown" style="width: 100%;">
+                            <a href="helmets.html" style="display:flex; justify-content:space-between; align-items:center;">Helmets <span>▸</span></a>
+                            <div class="nav-dropdown-content sub-dropdown-content" style="left: 100%; top: 0; min-width: 200px; margin-left: 0; border-top: none; border-left: 2px solid var(--color-accent); border-radius: 0 8px 8px 8px;">
+                                <a href="helmets.html#military">Defence Series</a>
+                                <a href="helmets.html#civil">Civil Series</a>
+                                <a href="helmets.html#tactical">Tactical Series</a>
+                                <a href="helmets.html#traffic">Traffic Series</a>
+                                <a href="helmets.html#safety">Industrial Series</a>
+                                <a href="helmets.html#sporting">Sporting Series</a>
+                            </div>
+                        </div>
                         <a href="kneepads.html">Kneepads</a>
                         <a href="bodyguard.html">Body Protection</a>
                     </div>
@@ -257,7 +271,17 @@
             <div class="mobile-dropdown">
                 <a class="mobile-dropdown-toggle" onclick="this.nextElementSibling.classList.toggle('active')">PRODUCTS ▾</a>
                 <div class="mobile-dropdown-content">
-                    <a href="helmets.html" onclick="toggleMobileMenu()">Helmets</a>
+                    <div class="mobile-dropdown">
+                        <a class="mobile-dropdown-toggle" onclick="this.nextElementSibling.classList.toggle('active')" style="padding: 0; color: var(--color-text-light); font-size: 1rem; width: auto; justify-content: flex-start; gap: 8px;">Helmets ▾</a>
+                        <div class="mobile-dropdown-content">
+                            <a href="helmets.html#military" onclick="toggleMobileMenu()" style="font-size: 0.9rem;">Defence Series</a>
+                            <a href="helmets.html#civil" onclick="toggleMobileMenu()" style="font-size: 0.9rem;">Civil Series</a>
+                            <a href="helmets.html#tactical" onclick="toggleMobileMenu()" style="font-size: 0.9rem;">Tactical Series</a>
+                            <a href="helmets.html#traffic" onclick="toggleMobileMenu()" style="font-size: 0.9rem;">Traffic Series</a>
+                            <a href="helmets.html#safety" onclick="toggleMobileMenu()" style="font-size: 0.9rem;">Industrial Series</a>
+                            <a href="helmets.html#sporting" onclick="toggleMobileMenu()" style="font-size: 0.9rem;">Sporting Series</a>
+                        </div>
+                    </div>
                     <a href="kneepads.html" onclick="toggleMobileMenu()">Kneepads</a>
                     <a href="bodyguard.html" onclick="toggleMobileMenu()">Body Protection</a>
                 </div>
@@ -290,8 +314,8 @@
     <section class="category-section military-section" id="military">
         <div class="container">
             <div class="category-header">
-                <p>Tactical Series</p>
-                <h2>Military & Anti-Riot</h2>
+                <p>Defence Series</p>
+                <h2>Defence Helmets</h2>
             </div>
             
             <div class="products-grid">
@@ -364,6 +388,354 @@
                         <span class="btn-view" onclick="openProductModal('helmet4')">View Details</span>
                     </div>
                 </div>
+                
+                <!-- Product Card 4: Anti Riot ISO Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="iso-helmet-new-1.jpg" alt="Anti Riot ISO Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="iso-helmet-new-2.jpg" alt="Anti Riot ISO Left" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="iso-helmet-new-3.png" alt="Anti Riot ISO Right" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet6', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Anti Riot ISO Helmet</h3>
+                        <p>Defender Series ISO</p>
+                        <span class="btn-view" onclick="openProductModal('helmet6')">View Details</span>
+                    </div>
+                </div>
+                
+                <!-- Product Card 5: Anti Riot MK-II Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="mk2-helmet-1.jpg" alt="Anti Riot MK-II Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="mk2-helmet-2.jpg" alt="Anti Riot MK-II Left" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="mk2-helmet-3.png" alt="Anti Riot MK-II Right" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet7', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Anti Riot MK-II Helmet</h3>
+                        <p>Advanced Protection Series</p>
+                        <span class="btn-view" onclick="openProductModal('helmet7')">View Details</span>
+                    </div>
+                </div>
+                
+                <!-- Product Card 6: Anti Riot Combat Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="combat-helmet-1.jpg" alt="Anti Riot Combat Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="combat-helmet-2.jpg" alt="Anti Riot Combat Left" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="combat-helmet-3.jpg" alt="Anti Riot Combat Inside" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet8', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Anti Riot Combat Helmet</h3>
+                        <p>Combat Grade Series</p>
+                        <span class="btn-view" onclick="openProductModal('helmet8')">View Details</span>
+                    </div>
+                </div>
+                
+                <!-- Product Card 7: Anti Riot Phatka Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="phatka-helmet-1.jpg" alt="Anti Riot Phatka Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="phatka-helmet-2.jpg" alt="Anti Riot Phatka Left" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="phatka-helmet-3.jpg" alt="Anti Riot Phatka Inside" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet9', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Anti Riot Phatka Helmet</h3>
+                        <p>Camouflage Series</p>
+                        <span class="btn-view" onclick="openProductModal('helmet9')">View Details</span>
+                    </div>
+                </div>
+                
+                <!-- Product Card 8: Anti Riot Old Police Cap -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="old-police-cap-1.png" alt="Anti Riot Old Police Cap Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="old-police-cap-2.png" alt="Anti Riot Old Police Cap Green" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="old-police-cap-3.png" alt="Anti Riot Old Police Cap Side" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet10', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Anti Riot Old Police Cap</h3>
+                        <p>Classic Protection</p>
+                        <span class="btn-view" onclick="openProductModal('helmet10')">View Details</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Civil Helmets -->
+    <section class="category-section civil-section" id="civil">
+        <div class="container">
+            <div class="category-header">
+                <p>Civil Series</p>
+                <h2>Civil Helmets</h2>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product Card 1: Vigorous Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="vigorous-helmet-1.jpg" alt="Vigorous Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="vigorous-helmet-2.jpg" alt="Vigorous Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="vigorous-helmet-3.jpg" alt="Vigorous Helmet Inside" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet11', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vigorous Helmet</h3>
+                        <p>Lightweight Shell</p>
+                        <span class="btn-view" onclick="openProductModal('helmet11')">View Details</span>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2: AM-I Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="ami-helmet-1.jpg" alt="AM-I Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="ami-helmet-2.jpg" alt="AM-I Helmet Open Visor" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="ami-helmet-3.jpg" alt="AM-I Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet12', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>AM-I Helmet</h3>
+                        <p>Civil Series Protection</p>
+                        <span class="btn-view" onclick="openProductModal('helmet12')">View Details</span>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3: MUB Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="mub-helmet-1.jpg" alt="MUB Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="mub-helmet-2.jpg" alt="MUB Helmet Visor" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="mub-helmet-3.jpg" alt="MUB Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet13', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>MUB Helmet</h3>
+                        <p>Open Face Civil Series</p>
+                        <span class="btn-view" onclick="openProductModal('helmet13')">View Details</span>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4: HAMZ Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="hamz-helmet-1.jpg" alt="HAMZ Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="hamz-helmet-2.jpg" alt="HAMZ Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="hamz-helmet-3.jpg" alt="HAMZ Helmet Interior" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet14', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>HAMZ Helmet</h3>
+                        <p>Premium Open Face</p>
+                        <span class="btn-view" onclick="openProductModal('helmet14')">View Details</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tactical Series -->
+    <section class="category-section tactical-section" id="tactical">
+        <div class="container">
+            <div class="category-header">
+                <p>Tactical Series</p>
+                <h2>Tactical Helmets</h2>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product Card 1: PSG Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="psg-helmet-1.jpg" alt="PSG Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="psg-helmet-2.jpg" alt="PSG Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="psg-helmet-3.png" alt="PSG Helmet Detail" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet15', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>PSG Helmet</h3>
+                        <p>Tactical Defense Series</p>
+                        <span class="btn-view" onclick="openProductModal('helmet15')">View Details</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traffic Police Helmets -->
+    <section class="category-section civil-section" id="traffic">
+        <div class="container">
+            <div class="category-header">
+                <p>Traffic Series</p>
+                <h2>Traffic Police Helmets</h2>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product Card 1: D Type Traffic Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="traffic-helmet-1.jpg" alt="Traffic Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="traffic-helmet-2.png" alt="Traffic Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="traffic-helmet-3.jpg" alt="Traffic Helmet Angle" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet16', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>D Type Traffic Helmet</h3>
+                        <p>Law Enforcement Series</p>
+                        <span class="btn-view" onclick="openProductModal('helmet16')">View Details</span>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2: Full Face Traffic Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="traffic-helmet-full-1.png" alt="Full Face Traffic Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="traffic-helmet-full-2.png" alt="Full Face Traffic Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="traffic-helmet-full-3.png" alt="Full Face Traffic Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet17', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Full Face Helmet</h3>
+                        <p>Law Enforcement Series</p>
+                        <span class="btn-view" onclick="openProductModal('helmet17')">View Details</span>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3: Open Face Traffic Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="traffic-helmet-open-1.png" alt="Open Face Traffic Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="traffic-helmet-open-2.jpg" alt="Open Face Traffic Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="traffic-helmet-open-3.png" alt="Open Face Traffic Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet18', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Open Face Helmet</h3>
+                        <p>Law Enforcement Series</p>
+                        <span class="btn-view" onclick="openProductModal('helmet18')">View Details</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -401,7 +773,43 @@
                     </div>
                 </div>
                 
-                <!-- Product Card 4: Cricket Helmet -->
+                <!-- Product Card: FRP Safety Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="frp-helmet-1.jpg" alt="FRP Safety Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="frp-helmet-2.png" alt="FRP Safety Helmet Inside" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="frp-helmet-3.jpg" alt="FRP Safety Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet19', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>FRP Safety Helmet</h3>
+                        <p>Industrial Protection Series</p>
+                        <span class="btn-view" onclick="openProductModal('helmet19')">View Details</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sporting Helmets -->
+    <section class="category-section military-section" id="sporting">
+        <div class="container">
+            <div class="category-header">
+                <p>Sporting Series</p>
+                <h2>Sporting Helmets</h2>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product Card: Cricket Helmet -->
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
@@ -424,6 +832,30 @@
                         <h3>Sports Safety Helmet</h3>
                         <p>Blue Shell with Grill</p>
                         <span class="btn-view" onclick="openProductModal('helmet5')">View Details</span>
+                    </div>
+                </div>
+                
+                <!-- Product Card: Rafting Helmet -->
+                <div class="product-card">
+                    <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
+                        <div class="carousel-track">
+                            <img src="rafting-helmet-1.jpg" alt="Rafting Helmet Inside" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="rafting-helmet-2.jpg" alt="Rafting Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img src="rafting-helmet-3.jpg" alt="Rafting Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="quick-quote-overlay">
+                            <span class="best-price-badge" onclick="event.stopPropagation(); openProductModal('helmet20', true)">Click for Best Price</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Rafting Helmet</h3>
+                        <p>Water Sports Series</p>
+                        <span class="btn-view" onclick="openProductModal('helmet20')">View Details</span>
                     </div>
                 </div>
             </div>

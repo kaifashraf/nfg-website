@@ -1542,7 +1542,6 @@ img[src*="delhi-riot"] {
     border-top: 2px solid var(--color-accent);
     border-radius: 0 0 8px 8px;
     padding: 8px 0;
-    overflow: hidden;
 }
 
 .nav-dropdown-content a {
@@ -1583,7 +1582,7 @@ img[src*="delhi-riot"] {
     transform-origin: top;
 }
 
-.nav-dropdown:hover .nav-dropdown-content {
+.nav-dropdown:hover > .nav-dropdown-content {
     display: block;
     animation: dropdownFade 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }

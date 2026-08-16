@@ -213,7 +213,7 @@ const products = {
     'helmet1': {
         title: 'Police Riot Helmet',
         price: 'Rs 900',
-        images: ['green-helmet-front.png', 'green-helmet-right.png', 'green-helmet-left.png'],
+        images: ['green-helmet-front.webp', 'green-helmet-right.webp', 'green-helmet-left.webp'],
         specs: {
             'Color': 'Green',
             'Country of Origin': 'Made in India',
@@ -225,7 +225,7 @@ const products = {
     'helmet2': {
         title: 'Anti-Riot Shield Helmet',
         price: 'Rs 400',
-        images: ['anti-riot-right.png', 'anti-riot-left.png'],
+        images: ['anti-riot-right.webp', 'anti-riot-left.webp'],
         specs: {
             'Material': 'Polycarbonate',
             'Color': 'Green / Brown',
@@ -237,7 +237,7 @@ const products = {
     'helmet3': {
         title: 'Fire Safety Helmet',
         price: 'Rs 350',
-        images: ['safety-helmet-pro-main.png', 'safety-helmet-pro-left.png', 'safety-helmet-pro-right.png'],
+        images: ['safety-helmet-pro-main.webp', 'safety-helmet-pro-left.webp', 'safety-helmet-pro-right.webp'],
         specs: {
             'Material': 'PVC',
             'Color': 'Yellow',
@@ -250,7 +250,7 @@ const products = {
     'helmet4': {
         title: 'Delhi Police Riot Helmet',
         price: 'Rs 550',
-        images: ['ai-helmet-front.jpg', 'ai-helmet-left.jpg', 'ai-helmet-right.jpg'],
+        images: ['ai-helmet-front.webp', 'ai-helmet-left.webp', 'ai-helmet-right.webp'],
         specs: {
             'Material': 'Polycarbonate (PC) & ABS',
             'Color': 'Black / Custom',
@@ -263,13 +263,208 @@ const products = {
     'helmet5': {
         title: 'Sports Safety Helmet',
         price: 'Get Best Quote',
-        images: ['cricket-helmet-front.png', 'cricket-helmet-right.png', 'cricket-helmet-left.png', 'cricket-helmet-back.png'],
+        images: ['cricket-helmet-front.webp', 'cricket-helmet-right.webp', 'cricket-helmet-left.webp', 'cricket-helmet-back.webp'],
         specs: {
             'Material': 'Fiberglass Shell',
             'Color': 'Navy Blue',
             'Visor': 'Metal Face Grill',
             'Usage/Application': 'Sports Safety',
             'Features': 'Lightweight, High Impact Resistance',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet6': {
+        title: 'Anti Riot ISO Helmet',
+        price: 'Get Best Quote',
+        images: ['iso-helmet-new-1.jpg', 'iso-helmet-new-2.jpg', 'iso-helmet-new-3.png'],
+        specs: {
+            'Material': 'Polycarbonate',
+            'Color': 'Green / Black',
+            'Visor': 'Clear Visor',
+            'Usage/Application': 'Riot Control',
+            'Features': 'ISO Certified, Defender Series',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet7': {
+        title: 'Anti Riot MK-II Helmet',
+        price: 'Get Best Quote',
+        images: ['mk2-helmet-1.jpg', 'mk2-helmet-2.jpg', 'mk2-helmet-3.png'],
+        specs: {
+            'Material': 'Polycarbonate (PC) Shell',
+            'Color': 'Black',
+            'Visor': 'Steel Wire Mesh',
+            'Usage/Application': 'Riot Control',
+            'Features': 'MK-II Advanced Protection',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet8': {
+        title: 'Anti Riot Combat Helmet',
+        price: 'Get Best Quote',
+        images: ['combat-helmet-1.jpg', 'combat-helmet-2.jpg', 'combat-helmet-3.jpg'],
+        specs: {
+            'Material': 'High-Impact Polymer & Kevlar Blend',
+            'Color': 'Olive Green',
+            'Visor': 'Reinforced Clear Visor',
+            'Usage/Application': 'Riot Control & Combat',
+            'Features': 'Combat Grade, Maximum Protection',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet9': {
+        title: 'Anti Riot Phatka Helmet',
+        price: 'Get Best Quote',
+        images: ['phatka-helmet-1.jpg', 'phatka-helmet-2.jpg', 'phatka-helmet-3.jpg'],
+        specs: {
+            'Material': 'High-Impact Synthetic Fibers',
+            'Color': 'Camouflage',
+            'Visor': 'None',
+            'Usage/Application': 'Riot Control & Defense',
+            'Features': 'Lightweight Camo Phatka',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet10': {
+        title: 'Anti Riot Old Police Cap',
+        price: 'Get Best Quote',
+        images: ['old-police-cap-1.png', 'old-police-cap-2.png', 'old-police-cap-3.png'],
+        specs: {
+            'Material': 'Classic Impact Resistant Material',
+            'Color': 'Multi-color',
+            'Visor': 'N/A',
+            'Usage/Application': 'Riot Control & Heritage',
+            'Features': 'Classic Design with Modern Protection',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet11': {
+        title: 'Vigorous Helmet',
+        price: 'Get Best Quote',
+        images: ['vigorous-helmet-1.jpg', 'vigorous-helmet-2.jpg', 'vigorous-helmet-3.jpg'],
+        specs: {
+            'Material': 'High-Impact ABS Shell',
+            'Color': 'Black/Silver',
+            'Visor': 'Scratch Resistant Clear Visor',
+            'Usage/Application': 'Civil / Motorcycle Riding',
+            'Features': 'Lightweight Shell, DOT Certified',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet12': {
+        title: 'AM-I Helmet',
+        price: 'Get Best Quote',
+        images: ['ami-helmet-1.jpg', 'ami-helmet-2.jpg', 'ami-helmet-3.jpg'],
+        specs: {
+            'Material': 'High-Impact ABS Shell',
+            'Color': 'Black with Blue Graphics',
+            'Visor': 'Clear Scratch Resistant Visor',
+            'Usage/Application': 'Civil / Motorbike Riding',
+            'Features': 'Aerodynamic Design, ISI Marked',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet13': {
+        title: 'MUB Helmet',
+        price: 'Get Best Quote',
+        images: ['mub-helmet-1.jpg', 'mub-helmet-2.jpg', 'mub-helmet-3.jpg'],
+        specs: {
+            'Material': 'High-Impact ABS Shell',
+            'Color': 'Glossy Black',
+            'Visor': 'Clear Scratch Resistant Visor',
+            'Usage/Application': 'Civil / Open Face Riding',
+            'Features': 'Comfortable Fit, ISI Marked',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet14': {
+        title: 'HAMZ Helmet',
+        price: 'Get Best Quote',
+        images: ['hamz-helmet-1.jpg', 'hamz-helmet-2.jpg', 'hamz-helmet-3.jpg'],
+        specs: {
+            'Material': 'High-Impact ABS Shell',
+            'Color': 'Glossy Black with Leather trim',
+            'Visor': 'Clear Scratch Resistant Visor',
+            'Usage/Application': 'Civil / Open Face Riding',
+            'Features': 'Classic Design, ISI Marked',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet15': {
+        title: 'PSG Helmet',
+        price: 'Get Best Quote',
+        images: ['psg-helmet-1.jpg', 'psg-helmet-2.jpg', 'psg-helmet-3.png'],
+        specs: {
+            'Material': 'High-Impact Kevlar/Aramid',
+            'Color': 'Olive Green',
+            'Protection Level': 'High Impact / Ballistic',
+            'Usage/Application': 'Tactical / Military / Special Forces',
+            'Features': 'Comfortable Fit, Maximum Protection',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet16': {
+        title: 'D Type Traffic Helmet',
+        price: 'Get Best Quote',
+        images: ['traffic-helmet-1.jpg', 'traffic-helmet-2.png', 'traffic-helmet-3.jpg'],
+        specs: {
+            'Material': 'High-Impact ABS Shell',
+            'Color': 'White with Checker Pattern',
+            'Visor': 'Clear Scratch Resistant Visor',
+            'Usage/Application': 'Traffic Police / Law Enforcement',
+            'Features': 'Lightweight, Comfortable Fit, Reflective Tape',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet17': {
+        title: 'Full Face Helmet',
+        price: 'Get Best Quote',
+        images: ['traffic-helmet-full-1.png', 'traffic-helmet-full-2.png', 'traffic-helmet-full-3.png'],
+        specs: {
+            'Material': 'High-Impact ABS Shell',
+            'Color': 'White with Custom Graphics',
+            'Visor': 'Clear Scratch Resistant Visor',
+            'Usage/Application': 'Traffic Police / Law Enforcement',
+            'Features': 'Full Face Protection, ISI Marked',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet18': {
+        title: 'Open Face Helmet',
+        price: 'Get Best Quote',
+        images: ['traffic-helmet-open-1.png', 'traffic-helmet-open-2.jpg', 'traffic-helmet-open-3.png'],
+        specs: {
+            'Material': 'High-Impact ABS Shell',
+            'Color': 'White with Blue/Red Stripes or Custom Camouflage',
+            'Visor': 'Extended Clear Visor',
+            'Usage/Application': 'Traffic Police / Law Enforcement / Patrolling',
+            'Features': 'Comfortable Fit, Maximum Visibility',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet19': {
+        title: 'FRP Safety Helmet',
+        price: 'Get Best Quote',
+        images: ['frp-helmet-1.jpg', 'frp-helmet-2.png', 'frp-helmet-3.jpg'],
+        specs: {
+            'Material': 'Fibre Reinforced Plastic (FRP)',
+            'Color': 'Orange (Also available in Yellow, White)',
+            'Protection Level': 'High Impact Resistance',
+            'Usage/Application': 'Construction / Industrial / Mining',
+            'Features': 'Comfortable Harness, Heat Resistant, ISI Marked',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'helmet20': {
+        title: 'Rafting Helmet',
+        price: 'Get Best Quote',
+        images: ['rafting-helmet-1.jpg', 'rafting-helmet-2.jpg', 'rafting-helmet-3.jpg'],
+        specs: {
+            'Material': 'High-Impact ABS Shell with EVA Foam',
+            'Color': 'Red (Custom colors available)',
+            'Protection Level': 'Water / Impact Resistant',
+            'Usage/Application': 'River Rafting / Kayaking / Water Sports',
+            'Features': 'Quick Dry Padding, Adjustable Chin Strap, Vented',
             'Country of Origin': 'Made in India'
         }
     },
