@@ -519,7 +519,7 @@ img {
 
 .hero-title-custom {
     font-family: var(--font-serif);
-    font-size: 5.5rem; /* Reduced size to match the original screenshot */
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
     line-height: 1;
     font-weight: 300;
     color: #1a1a1a;
@@ -537,6 +537,7 @@ img {
     justify-content: space-between;
     align-items: flex-end;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .hero-desc-custom {
@@ -551,9 +552,9 @@ img {
 
 .hero-actions-custom {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 16px;
-    margin-bottom: 5px; /* Alignment tweak */
+    flex-wrap: wrap;
 }
 
 .btn-solid-custom {
@@ -605,7 +606,6 @@ img {
 }
 
 @media (max-width: 1024px) {
-    .hero-title-custom { font-size: 4.5rem; }
     .hero-bottom-custom { flex-direction: column; align-items: flex-start; gap: 30px; }
     .nav-links-custom { display: none; }
 }
@@ -1268,14 +1268,22 @@ img[src*="delhi-riot"] {
     
     /* Typography & Spacing */
     .hero-container-custom {
-        padding-top: 130px; /* Restored gap to match screenshot */
+        padding-top: 120px;
     }
     .hero-subtitle-custom {
-        margin-bottom: 40px; /* Restored gap to match screenshot */
+        margin-bottom: 30px;
     }
-    .hero-title-custom {
-        font-size: 3rem;
-        line-height: 1.1;
+    .hero-desc-custom {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+    .hero-actions-custom {
+        width: 100%;
+    }
+    .btn-solid-custom, .btn-outline-custom {
+        width: 100%;
+        text-align: center;
+        padding: 16px 20px;
     }
     .section {
         padding: var(--spacing-md) 0;
