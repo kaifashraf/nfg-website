@@ -248,8 +248,10 @@ img {
     left: 0;
     width: 100%;
     z-index: 100;
-    background-color: transparent;
-    transition: background-color 0.3s, transform 0.3s;
+    background-color: rgba(249, 248, 246, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s;
 }
 
 .navbar.scrolled {
@@ -1923,3 +1925,4 @@ img[src*="delhi-riot"] {
     align-items: center;
     gap: 15px;
 }
+
