@@ -771,7 +771,7 @@ img {
 
 @media (max-width: 768px) {
     .hero h1 { font-size: var(--text-3xl); }
-    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .process-grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1219,7 +1219,7 @@ img[src*="delhi-riot"] {
     }
     
     /* Layouts and Grids */
-    .gallery-grid, .grid-2, .footer-grid, .modal-grid, .about-grid {
+    .grid-2, .footer-grid, .modal-grid, .about-grid {
         grid-template-columns: 1fr !important;
     }
     .grid-2 {
