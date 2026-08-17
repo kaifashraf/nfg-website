@@ -166,8 +166,15 @@
                                 <a href="helmets.html#sporting">Sporting Series</a>
                             </div>
                         </div>
-                        <a href="kneepads.html">Anti Riot Equipment</a>
-                        <a href="bodyguard.html">Body Protection</a>
+                        <div class="nav-dropdown sub-dropdown" style="width: 100%;">
+                            <a href="kneepads.html" style="display:flex; justify-content:space-between; align-items:center;">Anti Riot Equipment <span>▸</span></a>
+                            <div class="nav-dropdown-content sub-dropdown-content" style="left: 100%; top: 0; min-width: 210px; margin-left: 0; border-top: none; border-left: 2px solid var(--color-accent); border-radius: 0 8px 8px 8px;">
+                                <a href="kneepads.html#shield">Polycarbonate Shield</a>
+                                <a href="kneepads.html#cloth">Cloth Body Protector</a>
+                                <a href="kneepads.html#full">Full Body Protector</a>
+                                <a href="kneepads.html#lathi">Polycarbonate Lathi</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <a href="about.html">ABOUT US</a>
@@ -206,8 +213,15 @@
                             <a href="helmets.html#sporting" onclick="toggleMobileMenu()" style="font-size: 0.9rem;">Sporting Series</a>
                         </div>
                     </div>
-                    <a href="kneepads.html" onclick="toggleMobileMenu()">Anti Riot Equipment</a>
-                    <a href="bodyguard.html" onclick="toggleMobileMenu()">Body Protection</a>
+                    <div class="mobile-dropdown">
+                        <a class="mobile-dropdown-toggle" onclick="this.nextElementSibling.classList.toggle('active')" style="padding: 0; color: var(--color-text-light); font-size: 1rem; width: auto; justify-content: flex-start; gap: 8px;">Anti Riot Equipment ▾</a>
+                        <div class="mobile-dropdown-content">
+                            <a href="kneepads.html#shield" onclick="toggleMobileMenu()" style="font-size: 0.9rem;">Polycarbonate Shield</a>
+                            <a href="kneepads.html#cloth" onclick="toggleMobileMenu()" style="font-size: 0.9rem;">Cloth Body Protector</a>
+                            <a href="kneepads.html#full" onclick="toggleMobileMenu()" style="font-size: 0.9rem;">Full Body Protector</a>
+                            <a href="kneepads.html#lathi" onclick="toggleMobileMenu()" style="font-size: 0.9rem;">Polycarbonate Lathi</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <a href="about.html" onclick="toggleMobileMenu()">ABOUT US</a>
