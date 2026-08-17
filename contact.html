@@ -367,8 +367,12 @@
             </div>
 
             <!-- Image Card -->
-            <div class="image-container" style="border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05); height: 100%; min-height: 400px;">
-                <img src="contact_image.jpg" alt="NFG Manufacturing Facility" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="image-container" style="border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); height: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #2c3e50 0%, #1a252f 100%); position: relative;">
+                <!-- Decorative background elements -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 20px 20px; pointer-events: none;"></div>
+                <div style="position: absolute; bottom: 20px; left: 20px; color: rgba(255,255,255,0.5); font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">Premium Protection</div>
+                
+                <img src="iso-helmet-right.png" alt="NFG Tactical Helmet" style="width: 80%; height: auto; max-height: 90%; object-fit: contain; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5)); transform: scale(1.05); transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1.05)'">
             </div>
         </div>
     </section>
