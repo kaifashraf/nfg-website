@@ -468,39 +468,51 @@ const products = {
             'Country of Origin': 'Made in India'
         }
     },
-    'kneepad1': {
-        title: 'Tactical Defender Kneepads',
-        price: 'Rs 1,200',
-        images: ['kneepad-1.jpg', 'kneepad-2.jpg', 'kneepad-3.jpg'],
-        specs: {
-            'Material': 'High-Impact Polymer & Nylon',
-            'Color': 'Black',
-            'Fit': 'Adjustable Straps',
-            'Usage': 'Tactical / Riot Control',
-            'Country of Origin': 'Made in India'
-        }
-    },
-    'kneepad2': {
-        title: 'Tactical Combat Kneepads',
-        price: 'Rs 1,400',
-        images: ['kneepad-4.jpg', 'kneepad-5.jpg', 'kneepad-3.jpg'],
-        specs: {
-            'Material': 'High-Density Polymer',
-            'Color': 'Green / Black',
-            'Fit': 'Velcro Adjustable',
-            'Usage': 'Combat / Military',
-            'Country of Origin': 'Made in India'
-        }
-    },
-    'bodyarmor1': {
-        title: 'Full Body Tactical Armor',
-        price: 'Rs 4,500',
-        images: ['body-armor-1.jpg', 'body-armor-2.jpg'],
+    'shield1': {
+        title: 'Polycarbonate Shield',
+        price: 'Get Best Quote',
+        images: ['SHEILD%201.02.png', 'SHEILD%201.03.png', 'SHEILD%201.05.png'],
         specs: {
             'Material': 'High-Impact Polycarbonate',
+            'Color': 'Transparent',
+            'Protection Level': 'High Impact Resistance',
+            'Usage': 'Riot Control / Law Enforcement',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'cloth_body_protector': {
+        title: 'Cloth Body Protector',
+        price: 'Get Best Quote',
+        images: ['body-armor-1.webp', 'body-armor-2.webp'],
+        specs: {
+            'Material': 'High-Impact Polycarbonate with Cloth Carrier',
             'Color': 'Camouflage',
             'Fit': 'Adjustable Straps',
             'Usage': 'Riot Control / Tactical',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'full_body_protector': {
+        title: 'Full Body Protector',
+        price: 'Get Best Quote',
+        images: ['FBP-1.webp', 'FBP-2.webp', 'FBP-3.webp'],
+        specs: {
+            'Material': 'High-Impact Polycarbonate & EVA Foam',
+            'Color': 'Black',
+            'Fit': 'Fully Adjustable Modular System',
+            'Usage': 'Riot Control / Law Enforcement',
+            'Country of Origin': 'Made in India'
+        }
+    },
+    'polycarbonate_lathi': {
+        title: 'Polycarbonate Lathi',
+        price: 'Get Best Quote',
+        images: ['LATHI-1.webp', 'LATHI-2.webp', 'LATHI-3.webp'],
+        specs: {
+            'Material': 'Solid Polycarbonate',
+            'Length': 'Standard 3ft / Custom',
+            'Durability': 'Unbreakable / High-Impact',
+            'Usage': 'Riot Control / Crowd Management',
             'Country of Origin': 'Made in India'
         }
     }
