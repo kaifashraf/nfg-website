@@ -614,7 +614,7 @@ img {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
+    gap: clamp(16px, 3vw, 40px);
     margin-top: var(--spacing-md);
 }
 
@@ -623,24 +623,28 @@ img {
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    border-radius: 16px;
+    box-shadow:
+        0 1px 3px rgba(0,0,0,0.04),
+        0 8px 24px rgba(139,115,85,0.06);
     overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: default;
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/5;
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow:
+        0 4px 8px rgba(0,0,0,0.04),
+        0 20px 50px rgba(139,115,85,0.12);
 }
 
 .gallery-image-wrapper {
     position: relative;
     flex: 1;
     width: 100%;
-    background-color: #f7f7f7;
+    background: linear-gradient(145deg, #f0efec 0%, #e8e6e1 100%);
     overflow: hidden;
 }
 
@@ -648,12 +652,12 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
     will-change: transform;
 }
 
 .gallery-item:hover .gallery-image-wrapper img {
-    transform: scale(1.12);
+    transform: scale(1.08);
 }
 
 .gallery-item-info {
@@ -771,7 +775,27 @@ img {
 
 @media (max-width: 768px) {
     .hero h1 { font-size: var(--text-3xl); }
-    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .gallery-item {
+        border-radius: 12px;
+        aspect-ratio: 4/5;
+    }
+    .gallery-item-info {
+        padding: 12px;
+    }
+    .gallery-item-text h3 {
+        font-size: 1.1rem;
+    }
+    .gallery-item-text p {
+        font-size: 0.75rem;
+    }
+    .btn-circle {
+        width: 32px;
+        height: 32px;
+    }
     .process-grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -982,6 +1006,7 @@ img.shiny-enhanced {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch;
 }
 .carousel-track::-webkit-scrollbar {
     display: none; /* Chrome/Safari */
@@ -992,7 +1017,7 @@ img.shiny-enhanced {
     height: 100%;
     object-fit: cover;
     scroll-snap-align: start;
-    background-color: #e8e9eb; /* Fallback */
+    background-color: transparent;
 }
 
 
@@ -1003,32 +1028,39 @@ img[src*="delhi-riot"] {
 }
 .carousel-dots {
     position: absolute;
-    bottom: var(--spacing-sm);
+    bottom: 14px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 8px;
+    gap: 6px;
     z-index: 10;
+    padding: 6px 10px;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
 }
 .carousel-dots .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.4);
+    width: 7px;
+    height: 7px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.45);
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .carousel-dots .dot.active {
     background-color: #fff;
+    width: 20px;
 }
 
 /* Modal specific carousel dots (darker for light backgrounds) */
 .modal-image .carousel-dots .dot {
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 .modal-image .carousel-dots .dot.active {
-    background-color: #000;
+    background-color: rgba(0,0,0,0.75);
+    width: 20px;
 }
 
 /* Product Modal Styles */

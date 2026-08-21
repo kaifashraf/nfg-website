@@ -99,35 +99,37 @@
         /* Grid specific to this page */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: var(--spacing-md);
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: clamp(16px, 3vw, 32px);
         }
 
         .product-card {
             background: rgba(0,0,0,0.03);
-            border-radius: 8px;
+            border-radius: 14px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
             position: relative;
             cursor: pointer;
         }
 
         .military-section .product-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.04);
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow:
+                0 4px 8px rgba(0,0,0,0.04),
+                0 20px 50px rgba(139,115,85,0.10);
         }
 
         .military-section .product-card:hover {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
         }
 
         .product-image-container {
-            aspect-ratio: 1;
-            background-color: #e8e6e1;
+            aspect-ratio: 4/5;
+            background: linear-gradient(145deg, #f0efec 0%, #e8e6e1 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -135,18 +137,18 @@
         }
 
         .military-section .product-image-container {
-            background-color: #1a1a1a;
+            background: linear-gradient(145deg, #1e1e1e 0%, #141414 100%);
         }
 
         .product-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .product-card:hover img {
-            transform: scale(1.1);
+            transform: scale(1.06);
         }
 
         .product-info {
@@ -209,6 +211,30 @@
         .military-section .empty-placeholder {
             border-color: rgba(255,255,255,0.2);
             color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .product-card {
+                border-radius: 12px;
+            }
+            .product-info {
+                padding: 12px 8px;
+            }
+            .product-info h3 {
+                font-size: 1rem;
+            }
+            .product-info p {
+                font-size: 0.75rem;
+                margin-bottom: 8px;
+            }
+            .btn-view {
+                padding: 6px 10px;
+                font-size: 0.65rem;
+            }
         }
     </style>
 </head>
@@ -337,9 +363,9 @@
                 <div class="product-card" id="shield">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="SHEILD%201.02.png" alt="Polycarbonate Shield 1" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="SHEILD%201.03.png" alt="Polycarbonate Shield 2" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="SHEILD%201.05.png" alt="Polycarbonate Shield 3" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="sheild-1.02.webp" srcset="sheild-1.02-348w.webp 348w, sheild-1.02-696w.webp 696w, sheild-1.02.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Polycarbonate Shield 1" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="sheild-1.03.webp" srcset="sheild-1.03-348w.webp 348w, sheild-1.03-696w.webp 696w, sheild-1.03.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Polycarbonate Shield 2" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="sheild-1.05.webp" srcset="sheild-1.05-348w.webp 348w, sheild-1.05-696w.webp 696w, sheild-1.05.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Polycarbonate Shield 3" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -361,8 +387,8 @@
                 <div class="product-card" id="cloth">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="body-armor-1.webp" alt="Cloth Body Protector 1" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="body-armor-2.webp" alt="Cloth Body Protector 2" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="body-armor-1.webp" srcset="body-armor-1-348w.webp 348w, body-armor-1-696w.webp 696w, body-armor-1.webp 2752w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cloth Body Protector 1" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="body-armor-2.webp" srcset="body-armor-2-348w.webp 348w, body-armor-2-696w.webp 696w, body-armor-2.webp 1200w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cloth Body Protector 2" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -383,9 +409,9 @@
                 <div class="product-card" id="full">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="FBP-1.webp" alt="Full Body Protector 1" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="FBP-2.webp" alt="Full Body Protector 2" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="FBP-3.webp" alt="Full Body Protector 3" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="FBP-1.webp" alt="Full Body Protector 1" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="FBP-2.webp" alt="Full Body Protector 2" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="FBP-3.webp" alt="Full Body Protector 3" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -407,9 +433,9 @@
                 <div class="product-card" id="lathi">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="LATHI-1.webp" alt="Polycarbonate Lathi 1" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="LATHI-2.webp" alt="Polycarbonate Lathi 2" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="LATHI-3.webp" alt="Polycarbonate Lathi 3" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="LATHI-1.webp" alt="Polycarbonate Lathi 1" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="LATHI-2.webp" alt="Polycarbonate Lathi 2" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="LATHI-3.webp" alt="Polycarbonate Lathi 3" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>

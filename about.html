@@ -167,6 +167,7 @@
             .process-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
+    <link rel="preload" as="image" href="hero_helmet.webp" imagesrcset="hero_helmet-348w.webp 348w, hero_helmet-696w.webp 696w, hero_helmet.webp 1024w" imagesizes="100vw" fetchpriority="high">
 </head>
 <body>
     <!-- Custom Cursor -->
@@ -264,7 +265,7 @@
     <section class="hero-custom" style="display: flex; justify-content: center; align-items: center; min-height: 90vh;">
         <!-- Background Image as subtle watermark -->
         <div class="hero-bg-custom">
-            <img src="hero_helmet.webp" alt="Matte Grey Helmet" style="opacity: 0.25; object-position: center;">
+            <img decoding="sync" fetchpriority="high" src="hero_helmet.webp" srcset="hero_helmet-348w.webp 348w, hero_helmet-696w.webp 696w, hero_helmet.webp 1024w" sizes="100vw" alt="Matte Grey Helmet" style="opacity: 0.25; object-position: center;">
             <div class="hero-gradient-overlay" style="background: radial-gradient(circle at center, transparent 0%, var(--color-bg) 100%);"></div>
         </div>
         

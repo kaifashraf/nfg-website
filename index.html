@@ -167,6 +167,7 @@
             .process-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
+    <link rel="preload" as="image" href="hero_helmet.webp" imagesrcset="hero_helmet-348w.webp 348w, hero_helmet-696w.webp 696w, hero_helmet.webp 1024w" imagesizes="100vw" fetchpriority="high">
 </head>
 <body>
     <!-- Custom Cursor -->
@@ -264,7 +265,7 @@
     <section class="hero-custom">
         <!-- Background Image -->
         <div class="hero-bg-custom">
-            <img src="hero_helmet.webp" alt="NFG Tactical Helmet">
+            <img decoding="sync" fetchpriority="high" src="hero_helmet.webp" srcset="hero_helmet-348w.webp 348w, hero_helmet-696w.webp 696w, hero_helmet.webp 1024w" sizes="100vw" alt="NFG Tactical Helmet">
             <div class="hero-gradient-overlay"></div>
         </div>
         
@@ -315,9 +316,9 @@
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper carousel-wrapper">
                         <div class="carousel-track">
-                            <img src="green-helmet-front.webp" alt="Front View" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                            <img src="green-helmet-right.webp" alt="Right View" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                            <img src="green-helmet-left.webp" alt="Left View" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="green-helmet-front.webp" srcset="green-helmet-front-348w.webp 348w, green-helmet-front-696w.webp 696w, green-helmet-front.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Front View" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="green-helmet-right.webp" srcset="green-helmet-right-348w.webp 348w, green-helmet-right-696w.webp 696w, green-helmet-right.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Right View" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="green-helmet-left.webp" srcset="green-helmet-left-348w.webp 348w, green-helmet-left-696w.webp 696w, green-helmet-left.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Left View" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -333,8 +334,8 @@
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper carousel-wrapper">
                         <div class="carousel-track">
-                            <img src="anti-riot-right.webp" alt="Anti-Riot Right View" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                            <img src="anti-riot-left.webp" alt="Anti-Riot Left View" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="anti-riot-right.webp" srcset="anti-riot-right-348w.webp 348w, anti-riot-right-696w.webp 696w, anti-riot-right.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti-Riot Right View" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="anti-riot-left.webp" srcset="anti-riot-left-348w.webp 348w, anti-riot-left-696w.webp 696w, anti-riot-left.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti-Riot Left View" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -349,10 +350,10 @@
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper carousel-wrapper">
                         <div class="carousel-track">
-                            <img src="cricket-helmet-front.webp" alt="Cricket Helmet Front" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                            <img src="cricket-helmet-right.webp" alt="Cricket Helmet Right" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                            <img src="cricket-helmet-left.webp" alt="Cricket Helmet Left" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                            <img src="cricket-helmet-back.webp" alt="Cricket Helmet Back" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="cricket-helmet-front.webp" srcset="cricket-helmet-front-348w.webp 348w, cricket-helmet-front-696w.webp 696w, cricket-helmet-front.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cricket Helmet Front" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="cricket-helmet-right.webp" srcset="cricket-helmet-right-348w.webp 348w, cricket-helmet-right-696w.webp 696w, cricket-helmet-right.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cricket Helmet Right" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="cricket-helmet-left.webp" srcset="cricket-helmet-left-348w.webp 348w, cricket-helmet-left-696w.webp 696w, cricket-helmet-left.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cricket Helmet Left" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="cricket-helmet-back.webp" srcset="cricket-helmet-back-348w.webp 348w, cricket-helmet-back-696w.webp 696w, cricket-helmet-back.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cricket Helmet Back" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -369,9 +370,9 @@
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper carousel-wrapper">
                         <div class="carousel-track">
-                            <img src="ai-helmet-front.webp" alt="Delhi Police Riot Front" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                            <img src="ai-helmet-left.webp" alt="Delhi Police Riot Left" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                            <img src="ai-helmet-right.webp" alt="Delhi Police Riot Right" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="ai-helmet-front.webp" srcset="ai-helmet-front-348w.webp 348w, ai-helmet-front-696w.webp 696w, ai-helmet-front.webp 2752w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Delhi Police Riot Front" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="ai-helmet-left.webp" srcset="ai-helmet-left-348w.webp 348w, ai-helmet-left-696w.webp 696w, ai-helmet-left.webp 2752w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Delhi Police Riot Left" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="ai-helmet-right.webp" srcset="ai-helmet-right-348w.webp 348w, ai-helmet-right-696w.webp 696w, ai-helmet-right.webp 2752w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Delhi Police Riot Right" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -400,9 +401,9 @@
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper carousel-wrapper">
                         <div class="carousel-track">
-                            <img src="SHEILD%201.02.png" alt="Anti Riot Shield View 1" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                            <img src="SHEILD%201.03.png" alt="Anti Riot Shield View 2" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                            <img src="SHEILD%201.05.png" alt="Anti Riot Shield View 3" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="sheild-1.02.webp" srcset="sheild-1.02-348w.webp 348w, sheild-1.02-696w.webp 696w, sheild-1.02.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot Shield View 1" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="sheild-1.03.webp" srcset="sheild-1.03-348w.webp 348w, sheild-1.03-696w.webp 696w, sheild-1.03.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot Shield View 2" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="sheild-1.05.webp" srcset="sheild-1.05-348w.webp 348w, sheild-1.05-696w.webp 696w, sheild-1.05.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot Shield View 3" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -419,8 +420,8 @@
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper carousel-wrapper">
                         <div class="carousel-track">
-                            <img src="body-armor-1.webp" alt="Cloth Body Protector 1" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                            <img src="body-armor-2.webp" alt="Cloth Body Protector 2" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="body-armor-1.webp" srcset="body-armor-1-348w.webp 348w, body-armor-1-696w.webp 696w, body-armor-1.webp 2752w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cloth Body Protector 1" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <img src="body-armor-2.webp" srcset="body-armor-2-348w.webp 348w, body-armor-2-696w.webp 696w, body-armor-2.webp 1200w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cloth Body Protector 2" class="carousel-slide" loading="lazy" decoding="async" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>

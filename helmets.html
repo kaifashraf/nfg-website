@@ -103,35 +103,37 @@
         /* Grid specific to this page */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: var(--spacing-md);
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: clamp(16px, 3vw, 32px);
         }
 
         .product-card {
             background: rgba(0,0,0,0.03);
-            border-radius: 8px;
+            border-radius: 14px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
             position: relative;
             cursor: pointer;
         }
 
         .military-section .product-card, .tactical-section .product-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.04);
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow:
+                0 4px 8px rgba(0,0,0,0.04),
+                0 20px 50px rgba(139,115,85,0.10);
         }
 
         .military-section .product-card:hover, .tactical-section .product-card:hover {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
         }
 
         .product-image-container {
-            aspect-ratio: 1;
-            background-color: #e8e6e1;
+            aspect-ratio: 4/5;
+            background: linear-gradient(145deg, #f0efec 0%, #e8e6e1 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -139,18 +141,18 @@
         }
 
         .military-section .product-image-container, .tactical-section .product-image-container {
-            background-color: #1a1a1a;
+            background: linear-gradient(145deg, #1e1e1e 0%, #141414 100%);
         }
 
         .product-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .product-card:hover img {
-            transform: scale(1.1);
+            transform: scale(1.06);
         }
 
         .product-info {
@@ -213,6 +215,30 @@
         .military-section .empty-placeholder, .tactical-section .empty-placeholder {
             border-color: rgba(255,255,255,0.2);
             color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .product-card {
+                border-radius: 12px;
+            }
+            .product-info {
+                padding: 12px 8px;
+            }
+            .product-info h3 {
+                font-size: 1rem;
+            }
+            .product-info p {
+                font-size: 0.75rem;
+                margin-bottom: 8px;
+            }
+            .btn-view {
+                padding: 6px 10px;
+                font-size: 0.65rem;
+            }
         }
     </style>
 </head>
@@ -341,9 +367,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="green-helmet-front.webp" alt="Front View" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="green-helmet-right.webp" alt="Right View" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="green-helmet-left.webp" alt="Left View" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="green-helmet-front.webp" srcset="green-helmet-front-348w.webp 348w, green-helmet-front-696w.webp 696w, green-helmet-front.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Front View" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="green-helmet-right.webp" srcset="green-helmet-right-348w.webp 348w, green-helmet-right-696w.webp 696w, green-helmet-right.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Right View" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="green-helmet-left.webp" srcset="green-helmet-left-348w.webp 348w, green-helmet-left-696w.webp 696w, green-helmet-left.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Left View" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -365,8 +391,8 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="anti-riot-right.webp" alt="Anti-Riot Right View" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="anti-riot-left.webp" alt="Anti-Riot Left View" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="anti-riot-right.webp" srcset="anti-riot-right-348w.webp 348w, anti-riot-right-696w.webp 696w, anti-riot-right.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti-Riot Right View" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="anti-riot-left.webp" srcset="anti-riot-left-348w.webp 348w, anti-riot-left-696w.webp 696w, anti-riot-left.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti-Riot Left View" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -387,9 +413,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="ai-helmet-front.webp" alt="Delhi Police Riot Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="ai-helmet-left.webp" alt="Delhi Police Riot Left" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="ai-helmet-right.webp" alt="Delhi Police Riot Right" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="ai-helmet-front.webp" srcset="ai-helmet-front-348w.webp 348w, ai-helmet-front-696w.webp 696w, ai-helmet-front.webp 2752w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Delhi Police Riot Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="ai-helmet-left.webp" srcset="ai-helmet-left-348w.webp 348w, ai-helmet-left-696w.webp 696w, ai-helmet-left.webp 2752w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Delhi Police Riot Left" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="ai-helmet-right.webp" srcset="ai-helmet-right-348w.webp 348w, ai-helmet-right-696w.webp 696w, ai-helmet-right.webp 2752w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Delhi Police Riot Right" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -411,9 +437,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="iso-helmet-new-1.jpg" alt="Anti Riot ISO Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="iso-helmet-new-2.jpg" alt="Anti Riot ISO Left" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="iso-helmet-new-3.png" alt="Anti Riot ISO Right" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="iso-helmet-new-1.webp" srcset="iso-helmet-new-1-348w.webp 348w, iso-helmet-new-1-696w.webp 696w, iso-helmet-new-1.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot ISO Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="iso-helmet-new-2.webp" srcset="iso-helmet-new-2-348w.webp 348w, iso-helmet-new-2-696w.webp 696w, iso-helmet-new-2.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot ISO Left" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="iso-helmet-new-3.webp" srcset="iso-helmet-new-3-348w.webp 348w, iso-helmet-new-3-696w.webp 696w, iso-helmet-new-3.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot ISO Right" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -435,9 +461,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="mk2-helmet-1.jpg" alt="Anti Riot MK-II Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="mk2-helmet-2.jpg" alt="Anti Riot MK-II Left" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="mk2-helmet-3.png" alt="Anti Riot MK-II Right" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="mk2-helmet-1.webp" srcset="mk2-helmet-1-348w.webp 348w, mk2-helmet-1-696w.webp 696w, mk2-helmet-1.webp 768w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot MK-II Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="mk2-helmet-2.webp" srcset="mk2-helmet-2-348w.webp 348w, mk2-helmet-2-696w.webp 696w, mk2-helmet-2.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot MK-II Left" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="mk2-helmet-3.webp" srcset="mk2-helmet-3-348w.webp 348w, mk2-helmet-3-696w.webp 696w, mk2-helmet-3.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot MK-II Right" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -459,9 +485,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="combat-helmet-1.jpg" alt="Anti Riot Combat Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="combat-helmet-2.jpg" alt="Anti Riot Combat Left" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="combat-helmet-3.jpg" alt="Anti Riot Combat Inside" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="combat-helmet-1.webp" srcset="combat-helmet-1-348w.webp 348w, combat-helmet-1-696w.webp 696w, combat-helmet-1.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot Combat Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="combat-helmet-2.webp" srcset="combat-helmet-2-348w.webp 348w, combat-helmet-2-696w.webp 696w, combat-helmet-2.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot Combat Left" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="combat-helmet-3.webp" srcset="combat-helmet-3-348w.webp 348w, combat-helmet-3-696w.webp 696w, combat-helmet-3.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot Combat Inside" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -483,9 +509,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="phatka-helmet-1.jpg" alt="Anti Riot Phatka Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="phatka-helmet-2.jpg" alt="Anti Riot Phatka Left" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="phatka-helmet-3.jpg" alt="Anti Riot Phatka Inside" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="phatka-helmet-1.webp" srcset="phatka-helmet-1-348w.webp 348w, phatka-helmet-1-696w.webp 696w, phatka-helmet-1.webp 868w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot Phatka Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="phatka-helmet-2.webp" srcset="phatka-helmet-2-348w.webp 348w, phatka-helmet-2-696w.webp 696w, phatka-helmet-2.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot Phatka Left" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="phatka-helmet-3.webp" srcset="phatka-helmet-3-348w.webp 348w, phatka-helmet-3-696w.webp 696w, phatka-helmet-3.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot Phatka Inside" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -507,9 +533,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="old-police-cap-1.png" alt="Anti Riot Old Police Cap Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="old-police-cap-2.png" alt="Anti Riot Old Police Cap Green" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="old-police-cap-3.png" alt="Anti Riot Old Police Cap Side" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="old-police-cap-1.webp" srcset="old-police-cap-1-348w.webp 348w, old-police-cap-1-696w.webp 696w, old-police-cap-1.webp 872w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot Old Police Cap Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="old-police-cap-2.webp" srcset="old-police-cap-2-348w.webp 348w, old-police-cap-2.webp 523w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Anti Riot Old Police Cap Green" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="old-police-cap-3.webp" alt="Anti Riot Old Police Cap Side" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -543,9 +569,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="vigorous-helmet-1.jpg" alt="Vigorous Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="vigorous-helmet-2.jpg" alt="Vigorous Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="vigorous-helmet-3.jpg" alt="Vigorous Helmet Inside" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="vigorous-helmet-1.webp" srcset="vigorous-helmet-1-348w.webp 348w, vigorous-helmet-1-696w.webp 696w, vigorous-helmet-1.webp 833w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Vigorous Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="vigorous-helmet-2.webp" srcset="vigorous-helmet-2-348w.webp 348w, vigorous-helmet-2-696w.webp 696w, vigorous-helmet-2.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Vigorous Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="vigorous-helmet-3.webp" srcset="vigorous-helmet-3-348w.webp 348w, vigorous-helmet-3-696w.webp 696w, vigorous-helmet-3.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Vigorous Helmet Inside" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -567,9 +593,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="ami-helmet-1.jpg" alt="AM-I Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="ami-helmet-2.jpg" alt="AM-I Helmet Open Visor" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="ami-helmet-3.jpg" alt="AM-I Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="ami-helmet-1.webp" srcset="ami-helmet-1-348w.webp 348w, ami-helmet-1-696w.webp 696w, ami-helmet-1.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="AM-I Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="ami-helmet-2.webp" srcset="ami-helmet-2-348w.webp 348w, ami-helmet-2-696w.webp 696w, ami-helmet-2.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="AM-I Helmet Open Visor" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="ami-helmet-3.webp" srcset="ami-helmet-3-348w.webp 348w, ami-helmet-3-696w.webp 696w, ami-helmet-3.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="AM-I Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -591,9 +617,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="mub-helmet-1.jpg" alt="MUB Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="mub-helmet-2.jpg" alt="MUB Helmet Visor" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="mub-helmet-3.jpg" alt="MUB Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="mub-helmet-1.webp" srcset="mub-helmet-1-348w.webp 348w, mub-helmet-1-696w.webp 696w, mub-helmet-1.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="MUB Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="mub-helmet-2.webp" srcset="mub-helmet-2-348w.webp 348w, mub-helmet-2-696w.webp 696w, mub-helmet-2.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="MUB Helmet Visor" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="mub-helmet-3.webp" srcset="mub-helmet-3-348w.webp 348w, mub-helmet-3-696w.webp 696w, mub-helmet-3.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="MUB Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -615,9 +641,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="hamz-helmet-1.jpg" alt="HAMZ Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="hamz-helmet-2.jpg" alt="HAMZ Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="hamz-helmet-3.jpg" alt="HAMZ Helmet Interior" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="hamz-helmet-1.webp" srcset="hamz-helmet-1-348w.webp 348w, hamz-helmet-1-696w.webp 696w, hamz-helmet-1.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="HAMZ Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="hamz-helmet-2.webp" srcset="hamz-helmet-2-348w.webp 348w, hamz-helmet-2-696w.webp 696w, hamz-helmet-2.webp 1019w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="HAMZ Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="hamz-helmet-3.webp" srcset="hamz-helmet-3-348w.webp 348w, hamz-helmet-3-696w.webp 696w, hamz-helmet-3.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="HAMZ Helmet Interior" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -651,9 +677,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="psg-helmet-1.jpg" alt="PSG Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="psg-helmet-2.jpg" alt="PSG Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="psg-helmet-3.png" alt="PSG Helmet Detail" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="psg-helmet-1.webp" srcset="psg-helmet-1-348w.webp 348w, psg-helmet-1-696w.webp 696w, psg-helmet-1.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="PSG Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="psg-helmet-2.webp" srcset="psg-helmet-2-348w.webp 348w, psg-helmet-2-696w.webp 696w, psg-helmet-2.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="PSG Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="psg-helmet-3.webp" srcset="psg-helmet-3-348w.webp 348w, psg-helmet-3-696w.webp 696w, psg-helmet-3.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="PSG Helmet Detail" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -687,9 +713,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="traffic-helmet-1.jpg" alt="Traffic Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="traffic-helmet-2.png" alt="Traffic Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="traffic-helmet-3.jpg" alt="Traffic Helmet Angle" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="traffic-helmet-1.webp" srcset="traffic-helmet-1-348w.webp 348w, traffic-helmet-1-696w.webp 696w, traffic-helmet-1.webp 944w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Traffic Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="traffic-helmet-2.webp" srcset="traffic-helmet-2-348w.webp 348w, traffic-helmet-2-696w.webp 696w, traffic-helmet-2.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Traffic Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="traffic-helmet-3.webp" srcset="traffic-helmet-3-348w.webp 348w, traffic-helmet-3-696w.webp 696w, traffic-helmet-3.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Traffic Helmet Angle" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -711,9 +737,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="traffic-helmet-full-1.png" alt="Full Face Traffic Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="traffic-helmet-full-2.png" alt="Full Face Traffic Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="traffic-helmet-full-3.png" alt="Full Face Traffic Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="traffic-helmet-full-1.webp" srcset="traffic-helmet-full-1-348w.webp 348w, traffic-helmet-full-1-696w.webp 696w, traffic-helmet-full-1.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Full Face Traffic Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="traffic-helmet-full-2.webp" srcset="traffic-helmet-full-2-348w.webp 348w, traffic-helmet-full-2.webp 575w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Full Face Traffic Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="traffic-helmet-full-3.webp" srcset="traffic-helmet-full-3-348w.webp 348w, traffic-helmet-full-3-696w.webp 696w, traffic-helmet-full-3.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Full Face Traffic Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -735,9 +761,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="traffic-helmet-open-1.png" alt="Open Face Traffic Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="traffic-helmet-open-2.jpg" alt="Open Face Traffic Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="traffic-helmet-open-3.png" alt="Open Face Traffic Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="traffic-helmet-open-1.webp" srcset="traffic-helmet-open-1-348w.webp 348w, traffic-helmet-open-1-696w.webp 696w, traffic-helmet-open-1.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Open Face Traffic Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="traffic-helmet-open-2.webp" srcset="traffic-helmet-open-2-348w.webp 348w, traffic-helmet-open-2-696w.webp 696w, traffic-helmet-open-2.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Open Face Traffic Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="traffic-helmet-open-3.webp" srcset="traffic-helmet-open-3-348w.webp 348w, traffic-helmet-open-3-696w.webp 696w, traffic-helmet-open-3.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Open Face Traffic Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -771,9 +797,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="safety-helmet-pro-main.webp" alt="Safety Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="safety-helmet-pro-left.webp" alt="Safety Helmet Left" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="safety-helmet-pro-right.webp" alt="Safety Helmet Right" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="safety-helmet-pro-main.webp" srcset="safety-helmet-pro-main-348w.webp 348w, safety-helmet-pro-main-696w.webp 696w, safety-helmet-pro-main.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Safety Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="safety-helmet-pro-left.webp" srcset="safety-helmet-pro-left-348w.webp 348w, safety-helmet-pro-left-696w.webp 696w, safety-helmet-pro-left.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Safety Helmet Left" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="safety-helmet-pro-right.webp" srcset="safety-helmet-pro-right-348w.webp 348w, safety-helmet-pro-right-696w.webp 696w, safety-helmet-pro-right.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Safety Helmet Right" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -795,9 +821,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="frp-helmet-1.jpg" alt="FRP Safety Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="frp-helmet-2.png" alt="FRP Safety Helmet Inside" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="frp-helmet-3.jpg" alt="FRP Safety Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="frp-helmet-1.webp" srcset="frp-helmet-1-348w.webp 348w, frp-helmet-1-696w.webp 696w, frp-helmet-1.webp 837w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="FRP Safety Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="frp-helmet-2.webp" srcset="frp-helmet-2-348w.webp 348w, frp-helmet-2.webp 512w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="FRP Safety Helmet Inside" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="frp-helmet-3.webp" srcset="frp-helmet-3-348w.webp 348w, frp-helmet-3-696w.webp 696w, frp-helmet-3.webp 948w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="FRP Safety Helmet Side" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -831,10 +857,10 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="cricket-helmet-front.webp" alt="Cricket Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="cricket-helmet-right.webp" alt="Cricket Helmet Right" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="cricket-helmet-left.webp" alt="Cricket Helmet Left" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="cricket-helmet-back.webp" alt="Cricket Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="cricket-helmet-front.webp" srcset="cricket-helmet-front-348w.webp 348w, cricket-helmet-front-696w.webp 696w, cricket-helmet-front.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cricket Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="cricket-helmet-right.webp" srcset="cricket-helmet-right-348w.webp 348w, cricket-helmet-right-696w.webp 696w, cricket-helmet-right.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cricket Helmet Right" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="cricket-helmet-left.webp" srcset="cricket-helmet-left-348w.webp 348w, cricket-helmet-left-696w.webp 696w, cricket-helmet-left.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cricket Helmet Left" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="cricket-helmet-back.webp" srcset="cricket-helmet-back-348w.webp 348w, cricket-helmet-back-696w.webp 696w, cricket-helmet-back.webp 1024w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Cricket Helmet Back" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>
@@ -857,9 +883,9 @@
                 <div class="product-card">
                     <div class="product-image-container carousel-wrapper" style="overflow: hidden;">
                         <div class="carousel-track">
-                            <img src="rafting-helmet-1.jpg" alt="Rafting Helmet Inside" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="rafting-helmet-2.jpg" alt="Rafting Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
-                            <img src="rafting-helmet-3.jpg" alt="Rafting Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="rafting-helmet-1.webp" srcset="rafting-helmet-1-348w.webp 348w, rafting-helmet-1-696w.webp 696w, rafting-helmet-1.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Rafting Helmet Inside" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="rafting-helmet-2.webp" srcset="rafting-helmet-2-348w.webp 348w, rafting-helmet-2-696w.webp 696w, rafting-helmet-2.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Rafting Helmet Profile" class="carousel-slide" onerror="this.style.display='none'">
+                            <img decoding="async" loading="lazy" src="rafting-helmet-3.webp" srcset="rafting-helmet-3-348w.webp 348w, rafting-helmet-3-696w.webp 696w, rafting-helmet-3.webp 767w" sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1440px) calc(50vw - 3rem), 656px" alt="Rafting Helmet Front" class="carousel-slide" onerror="this.style.display='none'">
                         </div>
                         <div class="carousel-dots">
                             <span class="dot active"></span>

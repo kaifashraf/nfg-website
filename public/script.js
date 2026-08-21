@@ -276,7 +276,7 @@ const products = {
     'helmet6': {
         title: 'Anti Riot ISO Helmet',
         price: 'Get Best Quote',
-        images: ['iso-helmet-new-1.jpg', 'iso-helmet-new-2.jpg', 'iso-helmet-new-3.png'],
+        images: ['iso-helmet-new-1.webp', 'iso-helmet-new-2.webp', 'iso-helmet-new-3.webp'],
         specs: {
             'Material': 'Polycarbonate',
             'Color': 'Green / Black',
@@ -289,7 +289,7 @@ const products = {
     'helmet7': {
         title: 'Anti Riot MK-II Helmet',
         price: 'Get Best Quote',
-        images: ['mk2-helmet-1.jpg', 'mk2-helmet-2.jpg', 'mk2-helmet-3.png'],
+        images: ['mk2-helmet-1.webp', 'mk2-helmet-2.webp', 'mk2-helmet-3.webp'],
         specs: {
             'Material': 'Polycarbonate (PC) Shell',
             'Color': 'Black',
@@ -302,7 +302,7 @@ const products = {
     'helmet8': {
         title: 'Anti Riot Combat Helmet',
         price: 'Get Best Quote',
-        images: ['combat-helmet-1.jpg', 'combat-helmet-2.jpg', 'combat-helmet-3.jpg'],
+        images: ['combat-helmet-1.webp', 'combat-helmet-2.webp', 'combat-helmet-3.webp'],
         specs: {
             'Material': 'High-Impact Polymer & Kevlar Blend',
             'Color': 'Olive Green',
@@ -315,7 +315,7 @@ const products = {
     'helmet9': {
         title: 'Anti Riot Phatka Helmet',
         price: 'Get Best Quote',
-        images: ['phatka-helmet-1.jpg', 'phatka-helmet-2.jpg', 'phatka-helmet-3.jpg'],
+        images: ['phatka-helmet-1.webp', 'phatka-helmet-2.webp', 'phatka-helmet-3.webp'],
         specs: {
             'Material': 'High-Impact Synthetic Fibers',
             'Color': 'Camouflage',
@@ -328,7 +328,7 @@ const products = {
     'helmet10': {
         title: 'Anti Riot Old Police Cap',
         price: 'Get Best Quote',
-        images: ['old-police-cap-1.png', 'old-police-cap-2.png', 'old-police-cap-3.png'],
+        images: ['old-police-cap-1.webp', 'old-police-cap-2.webp', 'old-police-cap-3.webp'],
         specs: {
             'Material': 'Classic Impact Resistant Material',
             'Color': 'Multi-color',
@@ -341,7 +341,7 @@ const products = {
     'helmet11': {
         title: 'Vigorous Helmet',
         price: 'Get Best Quote',
-        images: ['vigorous-helmet-1.jpg', 'vigorous-helmet-2.jpg', 'vigorous-helmet-3.jpg'],
+        images: ['vigorous-helmet-1.webp', 'vigorous-helmet-2.webp', 'vigorous-helmet-3.webp'],
         specs: {
             'Material': 'High-Impact ABS Shell',
             'Color': 'Black/Silver',
@@ -354,7 +354,7 @@ const products = {
     'helmet12': {
         title: 'AM-I Helmet',
         price: 'Get Best Quote',
-        images: ['ami-helmet-1.jpg', 'ami-helmet-2.jpg', 'ami-helmet-3.jpg'],
+        images: ['ami-helmet-1.webp', 'ami-helmet-2.webp', 'ami-helmet-3.webp'],
         specs: {
             'Material': 'High-Impact ABS Shell',
             'Color': 'Black with Blue Graphics',
@@ -367,7 +367,7 @@ const products = {
     'helmet13': {
         title: 'MUB Helmet',
         price: 'Get Best Quote',
-        images: ['mub-helmet-1.jpg', 'mub-helmet-2.jpg', 'mub-helmet-3.jpg'],
+        images: ['mub-helmet-1.webp', 'mub-helmet-2.webp', 'mub-helmet-3.webp'],
         specs: {
             'Material': 'High-Impact ABS Shell',
             'Color': 'Glossy Black',
@@ -380,7 +380,7 @@ const products = {
     'helmet14': {
         title: 'HAMZ Helmet',
         price: 'Get Best Quote',
-        images: ['hamz-helmet-1.jpg', 'hamz-helmet-2.jpg', 'hamz-helmet-3.jpg'],
+        images: ['hamz-helmet-1.webp', 'hamz-helmet-2.webp', 'hamz-helmet-3.webp'],
         specs: {
             'Material': 'High-Impact ABS Shell',
             'Color': 'Glossy Black with Leather trim',
@@ -393,7 +393,7 @@ const products = {
     'helmet15': {
         title: 'PSG Helmet',
         price: 'Get Best Quote',
-        images: ['psg-helmet-1.jpg', 'psg-helmet-2.jpg', 'psg-helmet-3.png'],
+        images: ['psg-helmet-1.webp', 'psg-helmet-2.webp', 'psg-helmet-3.webp'],
         specs: {
             'Material': 'High-Impact Kevlar/Aramid',
             'Color': 'Olive Green',
@@ -406,7 +406,7 @@ const products = {
     'helmet16': {
         title: 'D Type Traffic Helmet',
         price: 'Get Best Quote',
-        images: ['traffic-helmet-1.jpg', 'traffic-helmet-2.png', 'traffic-helmet-3.jpg'],
+        images: ['traffic-helmet-1.webp', 'traffic-helmet-2.webp', 'traffic-helmet-3.webp'],
         specs: {
             'Material': 'High-Impact ABS Shell',
             'Color': 'White with Checker Pattern',
@@ -419,7 +419,7 @@ const products = {
     'helmet17': {
         title: 'Full Face Helmet',
         price: 'Get Best Quote',
-        images: ['traffic-helmet-full-1.png', 'traffic-helmet-full-2.png', 'traffic-helmet-full-3.png'],
+        images: ['traffic-helmet-full-1.webp', 'traffic-helmet-full-2.webp', 'traffic-helmet-full-3.webp'],
         specs: {
             'Material': 'High-Impact ABS Shell',
             'Color': 'White with Custom Graphics',
@@ -432,7 +432,7 @@ const products = {
     'helmet18': {
         title: 'Open Face Helmet',
         price: 'Get Best Quote',
-        images: ['traffic-helmet-open-1.png', 'traffic-helmet-open-2.jpg', 'traffic-helmet-open-3.png'],
+        images: ['traffic-helmet-open-1.webp', 'traffic-helmet-open-2.webp', 'traffic-helmet-open-3.webp'],
         specs: {
             'Material': 'High-Impact ABS Shell',
             'Color': 'White with Blue/Red Stripes or Custom Camouflage',
@@ -445,7 +445,7 @@ const products = {
     'helmet19': {
         title: 'FRP Safety Helmet',
         price: 'Get Best Quote',
-        images: ['frp-helmet-1.jpg', 'frp-helmet-2.png', 'frp-helmet-3.jpg'],
+        images: ['frp-helmet-1.webp', 'frp-helmet-2.webp', 'frp-helmet-3.webp'],
         specs: {
             'Material': 'Fibre Reinforced Plastic (FRP)',
             'Color': 'Orange (Also available in Yellow, White)',
@@ -458,7 +458,7 @@ const products = {
     'helmet20': {
         title: 'Rafting Helmet',
         price: 'Get Best Quote',
-        images: ['rafting-helmet-1.jpg', 'rafting-helmet-2.jpg', 'rafting-helmet-3.jpg'],
+        images: ['rafting-helmet-1.webp', 'rafting-helmet-2.webp', 'rafting-helmet-3.webp'],
         specs: {
             'Material': 'High-Impact ABS Shell with EVA Foam',
             'Color': 'Red (Custom colors available)',
@@ -471,7 +471,7 @@ const products = {
     'shield1': {
         title: 'Polycarbonate Shield',
         price: 'Get Best Quote',
-        images: ['SHEILD%201.02.png', 'SHEILD%201.03.png', 'SHEILD%201.05.png'],
+        images: ['sheild-1.02.webp', 'sheild-1.03.webp', 'sheild-1.05.webp'],
         specs: {
             'Material': 'High-Impact Polycarbonate',
             'Color': 'Transparent',
